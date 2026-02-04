@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Portafolio Full Stack Developer Innovador</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#06b6d4", // Vibrant Cyan
+                        secondary: "#8b5cf6", // Electric Purple
+                        "background-light": "#f8fafc",
+                        "background-dark": "#0a0a0a",
+                    },
+                    fontFamily: {
+                        display: ["Space Grotesk", "sans-serif"],
+                        body: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.75rem",
+                    },
+                },
+            },
+        };
+    </script>
+<style>
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glow-hover:hover {
+            box-shadow: 0 0 25px -5px rgba(6, 182, 212, 0.5);
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #06b6d4, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: radial-gradient(circle, #333 1px, transparent 1px);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-100 font-body transition-colors duration-300">
+<nav class="fixed top-0 w-full z-50 px-6 py-4">
+<div class="max-w-7xl mx-auto flex justify-between items-center glass rounded-full px-8 py-3 dark:bg-black/40 bg-white/40">
+<div class="text-2xl font-display font-bold text-gradient">DEV.ARC</div>
+<div class="hidden md:flex space-x-8 font-medium">
+<a class="hover:text-primary transition-colors" href="#home" data-es="Inicio" data-en="Home">Inicio</a>
+<a class="hover:text-primary transition-colors" href="#projects" data-es="Proyectos" data-en="Projects">Proyectos</a>
+<a class="hover:text-primary transition-colors" href="#stack" data-es="Stack" data-en="Stack">Stack</a>
+<a class="hover:text-primary transition-colors" href="#contact" data-es="Contacto" data-en="Contact">Contacto</a>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex gap-2 bg-slate-200 dark:bg-slate-800 rounded-full p-1">
+<button class="px-3 py-1 rounded-full text-sm font-semibold transition-all language-btn active" data-lang="es">ES</button>
+<button class="px-3 py-1 rounded-full text-sm font-semibold transition-all language-btn" data-lang="en">EN</button>
+</div>
+<button class="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-all" onclick="document.documentElement.classList.toggle('dark')">
+<span class="material-icons text-xl align-middle">dark_mode</span>
+</button>
+</div>
+</div>
+</nav>
+<section class="relative min-h-screen flex items-center pt-20 overflow-hidden" id="home">
+<div class="absolute inset-0 bg-grid opacity-20 pointer-events-none"></div>
+<div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="order-2 lg:order-1">
+<span class="inline-block px-4 py-1 rounded-full border border-primary text-primary text-sm font-semibold mb-6 animate-pulse" data-es="Disponible para Nuevos Desafíos" data-en="Available for New Challenges">
+                    Disponible para Nuevos Desafíos
+                </span>
+<h1 class="text-6xl md:text-8xl font-display font-extrabold leading-tight mb-6" id="hero-title">
+                    <span data-es="CREANDO" data-en="CRAFTING">CREANDO</span> <span class="text-gradient" data-es="FRONTERAS" data-en="DIGITAL">FRONTERAS</span><br/><span data-es="DIGITALES" data-en="FRONTIERS">DIGITALES</span>
+                </h1>
+<p class="text-xl text-slate-600 dark:text-slate-400 mb-10 max-w-lg leading-relaxed" data-es="Arquitecto Full Stack especializado en construir aplicaciones de alto rendimiento con precisión y estética moderna." data-en="Full Stack Architect specialized in building high-performance applications with precision and modern aesthetics.">
+                    Arquitecto Full Stack especializado en construir aplicaciones de alto rendimiento con precisión y estética moderna.
+                </p>
+<div class="flex flex-wrap gap-4">
+<a class="px-8 py-4 bg-primary hover:bg-cyan-500 text-white font-bold rounded-xl transition-all transform hover:-translate-y-1 glow-hover" href="#projects" data-es="Ver Mi Trabajo" data-en="View My Work">
+                        Ver Mi Trabajo
+                    </a>
+<a class="px-8 py-4 border-2 border-slate-300 dark:border-slate-700 hover:border-primary dark:hover:border-primary font-bold rounded-xl transition-all" href="#contact" data-es="Hablemos" data-en="Let's Talk">
+                        Hablemos
+                    </a>
+</div>
+</div>
+<div class="order-1 lg:order-2 relative group">
+<div class="absolute -inset-4 bg-gradient-to-tr from-primary to-secondary opacity-30 blur-2xl group-hover:opacity-50 transition-opacity"></div>
+<div class="relative overflow-hidden rounded-[2rem] border-4 border-slate-200 dark:border-slate-800 shadow-2xl">
+<img alt="Full Stack Developer Portrait" class="w-full object-cover grayscale hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105" src="assets/Gemini_Generated_Image_heflaoheflaohefl.png"/>
+</div>
+<div class="absolute -bottom-6 -right-6 glass p-4 rounded-2xl hidden md:block">
+<div class="flex items-center gap-3">
+<div class="w-3 h-3 rounded-full bg-green-500"></div>
+<span class="font-mono text-sm" data-es="Sistema: En línea" data-en="System: Online">Sistema: En línea</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-white dark:bg-black/20" id="projects">
+<div class="max-w-7xl mx-auto px-6">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+<div>
+<h2 class="text-4xl md:text-5xl font-display font-bold mb-4" data-es="Trabajos Destacados" data-en="Selected Works">Trabajos Destacados</h2>
+<p class="text-slate-500 dark:text-slate-400 max-w-md" data-es="Explorando la intersección entre arquitectura backend compleja y experiencias de usuario fluidas." data-en="Exploring the intersection of complex backend architecture and seamless user experiences.">Explorando la intersección entre arquitectura backend compleja y experiencias de usuario fluidas.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+<div class="group relative bg-slate-100 dark:bg-slate-900 rounded-3xl overflow-hidden hover:shadow-2xl transition-all w-full max-w-md cursor-pointer" onclick="openProjectModal('appcontabilidad')">
+<div class="h-64 overflow-hidden">
+<img alt="App Contabilidad - Dashboard" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="assets/Apps/AppContabilidad%20dashboard.png"/>
+</div>
+<div class="p-8">
+<div class="flex gap-2 mb-4">
+<span class="text-xs font-bold uppercase tracking-widest text-primary">Next.js</span>
+<span class="text-xs font-bold uppercase tracking-widest text-secondary">Supabase</span>
+</div>
+<h3 class="text-2xl font-bold mb-3" data-es="App Contabilidad" data-en="Accounting App">App Contabilidad</h3>
+<p class="text-slate-500 dark:text-slate-400 mb-6 text-sm" data-es="Sistema integral de gestión contable para pequeños negocios con dashboard intuitivo, gestión de productos y registro de ventas en tiempo real." data-en="Comprehensive accounting management system for small businesses with intuitive dashboard, product management and real-time sales records.">Sistema integral de gestión contable para pequeños negocios con dashboard intuitivo, gestión de productos y registro de ventas en tiempo real.</p>
+<a class="inline-flex items-center text-primary font-bold group-hover:gap-2 transition-all" href="javascript:void(0)" onclick="openProjectModal('appcontabilidad'); return false;">
+<span data-es="Ver Proyecto" data-en="View Project">Ver Proyecto</span> <span class="material-icons text-sm ml-1">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Modal para el proyecto de contabilidad -->
+<div id="projectModal" class="fixed inset-0 bg-black/50 z-50 hidden flex items-center justify-center p-4" onclick="closeProjectModal(event)">
+<div class="bg-white dark:bg-slate-900 rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto glass" onclick="event.stopPropagation()">
+<!-- Header del Modal -->
+<div class="sticky top-0 backdrop-blur-lg border-b border-slate-200 dark:border-slate-800 p-8 flex justify-between items-center">
+<div>
+<h2 class="text-3xl font-display font-bold mb-2" data-es="App Contabilidad" data-en="Accounting App">App Contabilidad</h2>
+<div class="flex gap-2">
+<span class="text-xs font-bold uppercase tracking-widest text-primary">Next.js</span>
+<span class="text-xs font-bold uppercase tracking-widest text-secondary">Supabase</span>
+</div>
+</div>
+<button class="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors" onclick="closeProjectModal()">
+<span class="material-icons text-3xl">close</span>
+</button>
+</div>
+
+<!-- Contenido del Modal -->
+<div class="p-8 space-y-8">
+<!-- Descripción -->
+<div>
+<h3 class="text-2xl font-bold mb-4" data-es="Descripción del Proyecto" data-en="Project Description">Descripción del Proyecto</h3>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed" data-es="App Contabilidad es una solución integral diseñada para facilitar la gestión contable de pequeños negocios. La aplicación proporciona una interfaz moderna e intuitiva que permite a los empresarios administrar sus operaciones financieras de manera eficiente." data-en="App Contabilidad is a comprehensive solution designed to facilitate accounting management for small businesses. The application provides a modern and intuitive interface that allows entrepreneurs to manage their financial operations efficiently.">App Contabilidad es una solución integral diseñada para facilitar la gestión contable de pequeños negocios. La aplicación proporciona una interfaz moderna e intuitiva que permite a los empresarios administrar sus operaciones financieras de manera eficiente.</p>
+</div>
+
+<!-- Problema que soluciona -->
+<div>
+<h3 class="text-2xl font-bold mb-4" data-es="Problema que Soluciona" data-en="Problem It Solves">Problema que Soluciona</h3>
+<ul class="space-y-3 text-slate-600 dark:text-slate-400">
+<li class="flex items-start gap-3">
+<span class="material-icons text-primary flex-shrink-0 mt-1">check_circle</span>
+<span data-es="Elimina la necesidad de sistemas complejos y costosos de contabilidad para pequeños negocios" data-en="Eliminates the need for complex and expensive accounting systems for small businesses">Elimina la necesidad de sistemas complejos y costosos de contabilidad para pequeños negocios</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-icons text-primary flex-shrink-0 mt-1">check_circle</span>
+<span data-es="Proporciona un dashboard centralizado para monitorear todas las operaciones en tiempo real" data-en="Provides a centralized dashboard to monitor all operations in real-time">Proporciona un dashboard centralizado para monitorear todas las operaciones en tiempo real</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-icons text-primary flex-shrink-0 mt-1">check_circle</span>
+<span data-es="Facilita la gestión de inventario y registro de ventas de forma rápida y práctica" data-en="Facilitates inventory management and sales record keeping quickly and conveniently">Facilita la gestión de inventario y registro de ventas de forma rápida y práctica</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-icons text-primary flex-shrink-0 mt-1">check_circle</span>
+<span data-es="Ahorra tiempo que antes se invertía en procesos manuales y propensos a errores" data-en="Saves time previously spent on manual and error-prone processes">Ahorra tiempo que antes se invertía en procesos manuales y propensos a errores</span>
+</li>
+</ul>
+</div>
+
+<!-- Galería de imágenes -->
+<div>
+<h3 class="text-2xl font-bold mb-6" data-es="Galería del Proyecto" data-en="Project Gallery">Galería del Proyecto</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="group relative rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 hover:shadow-xl transition-all">
+<img src="assets/Apps/AppContabilidad%20dashboard.png" alt="Dashboard" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300 cursor-pointer" onclick="toggleFullscreenImage(this)"/>
+<div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all flex items-center justify-center opacity-0 group-hover:opacity-100">
+<span class="material-icons text-white text-3xl">zoom_in</span>
+</div>
+</div>
+<div class="group relative rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 hover:shadow-xl transition-all">
+<img src="assets/Apps/AppContabilidadProducts.png" alt="Gestión de Productos" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300 cursor-pointer" onclick="toggleFullscreenImage(this)"/>
+<div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all flex items-center justify-center opacity-0 group-hover:opacity-100">
+<span class="material-icons text-white text-3xl">zoom_in</span>
+</div>
+</div>
+<div class="group relative rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 hover:shadow-xl transition-all">
+<img src="assets/Apps/AppContabilidadVenta.png" alt="Registro de Ventas" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300 cursor-pointer" onclick="toggleFullscreenImage(this)"/>
+<div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all flex items-center justify-center opacity-0 group-hover:opacity-100">
+<span class="material-icons text-white text-3xl">zoom_in</span>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Características técnicas -->
+<div>
+<h3 class="text-2xl font-bold mb-4" data-es="Características Técnicas" data-en="Technical Features">Características Técnicas</h3>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+<div class="p-4 bg-slate-50 dark:bg-slate-800 rounded-xl">
+<span class="text-xs text-primary font-bold uppercase tracking-widest" data-es="Framework" data-en="Framework">Framework</span>
+<p class="font-bold mt-2">Next.js 14</p>
+</div>
+<div class="p-4 bg-slate-50 dark:bg-slate-800 rounded-xl">
+<span class="text-xs text-secondary font-bold uppercase tracking-widest" data-es="Base de Datos" data-en="Database">Base de Datos</span>
+<p class="font-bold mt-2">Supabase</p>
+</div>
+<div class="p-4 bg-slate-50 dark:bg-slate-800 rounded-xl">
+<span class="text-xs text-primary font-bold uppercase tracking-widest" data-es="Estilos" data-en="Styling">Estilos</span>
+<p class="font-bold mt-2">Tailwind CSS</p>
+</div>
+<div class="p-4 bg-slate-50 dark:bg-slate-800 rounded-xl">
+<span class="text-xs text-secondary font-bold uppercase tracking-widest" data-es="Autenticación" data-en="Authentication">Autenticación</span>
+<p class="font-bold mt-2">Supabase Auth</p>
+</div>
+<div class="p-4 bg-slate-50 dark:bg-slate-800 rounded-xl">
+<span class="text-xs text-primary font-bold uppercase tracking-widest" data-es="Hosting" data-en="Hosting">Hosting</span>
+<p class="font-bold mt-2">Vercel</p>
+</div>
+<div class="p-4 bg-slate-50 dark:bg-slate-800 rounded-xl">
+<span class="text-xs text-secondary font-bold uppercase tracking-widest" data-es="Estado" data-en="Status">Estado</span>
+<p class="font-bold mt-2" data-es="En Producción" data-en="In Production">Desplegada</p>
+</div>
+</div>
+</div>
+
+<!-- Call to Action -->
+<div class="flex flex-col sm:flex-row gap-4 pt-6 border-t border-slate-200 dark:border-slate-800">
+<a href="https://app-contabilidad-de-nogecio.vercel.app/login" target="_blank" rel="noopener noreferrer" class="flex-1 px-8 py-4 bg-primary hover:bg-cyan-500 text-white font-bold rounded-xl transition-all transform hover:-translate-y-1 glow-hover flex items-center justify-center gap-2">
+<span data-es="Ver Aplicación en Vivo" data-en="View Live Application">Ver Aplicación en Vivo</span> <span class="material-icons text-sm">open_in_new</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Modal para imagen fullscreen -->
+<div id="fullscreenImageModal" class="fixed inset-0 bg-black/90 z-50 hidden flex items-center justify-center p-4" onclick="closeFullscreenImage(event)">
+<button class="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors" onclick="closeFullscreenImage()">
+<span class="material-icons text-4xl">close</span>
+</button>
+<img id="fullscreenImage" src="" alt="Fullscreen" class="max-w-full max-h-full object-contain" onclick="event.stopPropagation()"/>
+</div>
+<section class="py-24 relative overflow-hidden" id="stack">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-display font-bold mb-4" data-es="El Stack Tecnológico" data-en="The Tech Stack">El Stack Tecnológico</h2>
+<p class="text-slate-500 dark:text-slate-400" data-es="Dominando las herramientas de la web moderna" data-en="Mastering the tools of the modern web">Dominando las herramientas de la web moderna</p>
+</div>
+<div class="flex flex-wrap justify-center gap-6">
+<div class="px-8 py-4 bg-slate-100 dark:bg-slate-900 border-b-4 border-primary rounded-2xl flex items-center gap-3 transition-transform hover:-translate-y-2">
+<span class="material-icons text-primary">code</span>
+<span class="font-bold">TypeScript</span>
+</div>
+<div class="px-8 py-4 bg-slate-100 dark:bg-slate-900 border-b-4 border-secondary rounded-2xl flex items-center gap-3 transition-transform hover:-translate-y-2">
+<span class="material-icons text-secondary">dynamic_feed</span>
+<span class="font-bold">React / Next.js</span>
+</div>
+<div class="px-8 py-4 bg-slate-100 dark:bg-slate-900 border-b-4 border-primary rounded-2xl flex items-center gap-3 transition-transform hover:-translate-y-2">
+<span class="material-icons text-primary">dns</span>
+<span class="font-bold">Node.js</span>
+</div>
+<div class="px-8 py-4 bg-slate-100 dark:bg-slate-900 border-b-4 border-secondary rounded-2xl flex items-center gap-3 transition-transform hover:-translate-y-2">
+<span class="material-icons text-secondary">storage</span>
+<span class="font-bold">PostgreSQL</span>
+</div>
+<div class="px-8 py-4 bg-slate-100 dark:bg-slate-900 border-b-4 border-primary rounded-2xl flex items-center gap-3 transition-transform hover:-translate-y-2">
+<span class="material-icons text-primary">cloud</span>
+<span class="font-bold">AWS / Docker</span>
+</div>
+<div class="px-8 py-4 bg-slate-100 dark:bg-slate-900 border-b-4 border-secondary rounded-2xl flex items-center gap-3 transition-transform hover:-translate-y-2">
+<span class="material-icons text-secondary">terminal</span>
+<span class="font-bold">GraphQL</span>
+</div>
+<div class="px-8 py-4 bg-slate-100 dark:bg-slate-900 border-b-4 border-primary rounded-2xl flex items-center gap-3 transition-transform hover:-translate-y-2">
+<span class="material-icons text-primary">layers</span>
+<span class="font-bold">Tailwind CSS</span>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-slate-50 dark:bg-slate-900/40" id="contact">
+<div class="max-w-4xl mx-auto px-6">
+<div class="glass p-12 rounded-[3rem] relative overflow-hidden">
+<div class="absolute top-0 right-0 p-8 text-slate-200 dark:text-slate-800 pointer-events-none">
+<span class="material-icons text-[120px] rotate-12 opacity-50">send</span>
+</div>
+<h2 class="text-4xl font-display font-bold mb-8" data-es="¿Listo para Construir Algo Increíble?" data-en="Ready to Build Something Incredible?">¿Listo para Construir Algo Increíble?</h2>
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<label class="block text-sm font-semibold mb-2 ml-1" data-es="Nombre" data-en="Name">Nombre</label>
+<input class="w-full bg-white dark:bg-black/40 border-slate-200 dark:border-slate-800 focus:ring-primary focus:border-primary rounded-xl px-4 py-3 outline-none transition-all" placeholder="Juan Pérez" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-semibold mb-2 ml-1" data-es="Correo Electrónico" data-en="Email">Correo Electrónico</label>
+<input class="w-full bg-white dark:bg-black/40 border-slate-200 dark:border-slate-800 focus:ring-primary focus:border-primary rounded-xl px-4 py-3 outline-none transition-all" placeholder="juan@ejemplo.com" type="email"/>
+</div>
+</div>
+<div>
+<label class="block text-sm font-semibold mb-2 ml-1" data-es="Mensaje" data-en="Message">Mensaje</label>
+<textarea class="w-full bg-white dark:bg-black/40 border-slate-200 dark:border-slate-800 focus:ring-primary focus:border-primary rounded-xl px-4 py-3 outline-none transition-all" placeholder="Cuéntame sobre tu proyecto..." rows="4"></textarea>
+</div>
+<button class="w-full py-4 bg-primary hover:bg-cyan-500 text-white font-bold rounded-xl transition-all shadow-lg shadow-cyan-500/20" type="submit" data-es="Enviar Mensaje" data-en="Send Message">
+                        Enviar Mensaje
+                    </button>
+</form>
+</div>
+</div>
+</section>
+<footer class="py-12 border-t border-slate-200 dark:border-slate-800">
+<div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="text-2xl font-display font-bold text-gradient">DEV.ARC</div>
+<div class="flex gap-6">
+<a class="hover:text-primary transition-colors" href="#">GitHub</a>
+<a class="hover:text-primary transition-colors" href="#">LinkedIn</a>
+<a class="hover:text-primary transition-colors" href="#">Twitter</a>
+<a class="hover:text-primary transition-colors" href="#">Dribbble</a>
+</div>
+<p class="text-slate-500 text-sm" data-es="© 2024 Portafolio. Todos los derechos reservados." data-en="© 2024 Portfolio. All rights reserved.">© 2024 Portafolio. Todos los derechos reservados.</p>
+</div>
+</footer>
+
+<script>
+    // Language switcher functionality
+    const languageButtons = document.querySelectorAll('.language-btn');
+    let currentLanguage = localStorage.getItem('language') || 'es';
+
+    // Set initial language
+    initializeLanguage();
+
+    function initializeLanguage() {
+        document.documentElement.lang = currentLanguage;
+        updateButtonStates();
+        switchLanguage(currentLanguage);
+    }
+
+    function updateButtonStates() {
+        languageButtons.forEach(btn => {
+            if (btn.dataset.lang === currentLanguage) {
+                btn.classList.add('active', 'bg-primary', 'text-white');
+                btn.classList.remove('text-slate-600', 'dark:text-slate-400');
+            } else {
+                btn.classList.remove('active', 'bg-primary', 'text-white');
+                btn.classList.add('text-slate-600', 'dark:text-slate-400');
+            }
+        });
+    }
+
+    function switchLanguage(lang) {
+        // Handle all elements with data-es and data-en attributes
+        const elements = document.querySelectorAll('[data-es][data-en]');
+        elements.forEach(element => {
+            const text = lang === 'es' ? element.dataset.es : element.dataset.en;
+            
+            // Check if element has child elements (like spans inside)
+            if (element.children.length > 0) {
+                // For elements with children (mixed content), update each child
+                const children = element.querySelectorAll('[data-es][data-en]');
+                // Don't update this element's text if it has children with data attributes
+                if (children.length > 0) {
+                    // Let the children handle their own translation
+                    return;
+                }
+            }
+            
+            // For simple text elements or leaf nodes
+            element.textContent = text;
+        });
+        
+        // Update title
+        const titleEs = 'Portafolio Full Stack Developer Innovador';
+        const titleEn = 'Innovative Full Stack Developer Portfolio';
+        document.title = lang === 'es' ? titleEs : titleEn;
+        
+        currentLanguage = lang;
+        localStorage.setItem('language', lang);
+        updateButtonStates();
+    }
+
+    languageButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const lang = button.dataset.lang;
+            switchLanguage(lang);
+        });
+    });
+
+    // Project Modal Functions
+    function openProjectModal(projectId) {
+        const modal = document.getElementById('projectModal');
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeProjectModal(event) {
+        // Only close if clicking on the background, not the modal content
+        if (event && event.target.id !== 'projectModal') {
+            return;
+        }
+        const modal = document.getElementById('projectModal');
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.style.overflow = 'auto';
+    }
+
+    // Fullscreen Image Functions
+    function toggleFullscreenImage(imgElement) {
+        const modal = document.getElementById('fullscreenImageModal');
+        const fullscreenImg = document.getElementById('fullscreenImage');
+        fullscreenImg.src = imgElement.src;
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeFullscreenImage(event) {
+        // Only close if clicking on the background
+        if (event && event.target.id !== 'fullscreenImageModal') {
+            return;
+        }
+        const modal = document.getElementById('fullscreenImageModal');
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.style.overflow = 'auto';
+    }
+
+    // Keyboard support for modals
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeProjectModal();
+            closeFullscreenImage();
+        }
+    });
+
+    // Style for language buttons
+    const styleElement = document.createElement('style');
+    styleElement.textContent = `
+        .language-btn {
+            cursor: pointer;
+            color: #475569;
+        }
+        
+        .dark .language-btn {
+            color: #cbd5e1;
+        }
+        
+        .language-btn.active {
+            background-color: #06b6d4;
+            color: white;
+        }
+    `;
+    document.head.appendChild(styleElement);
+</script>
+
+</body>
+</html>
