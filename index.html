@@ -82,7 +82,7 @@
                     <span data-es="CREANDO" data-en="CRAFTING">CREANDO</span> <span class="text-gradient" data-es="FRONTERAS" data-en="DIGITAL">FRONTERAS</span><br/><span data-es="DIGITALES" data-en="FRONTIERS">DIGITALES</span>
                 </h1>
 <p class="text-xl text-slate-600 dark:text-slate-400 mb-10 max-w-lg leading-relaxed" data-es="Arquitecto Full Stack especializado en construir aplicaciones de alto rendimiento con precisión y estética moderna." data-en="Full Stack Architect specialized in building high-performance applications with precision and modern aesthetics.">
-                    Arquitecto Full Stack especializado en construir aplicaciones de alto rendimiento con precisión y estética moderna.
+                    Arquitecto Full Stack especializado en construir aplicaciones y paginas webde alto rendimiento con precisión y estética moderna.
                 </p>
 <div class="flex flex-wrap gap-4">
 <a class="px-8 py-4 bg-primary hover:bg-cyan-500 text-white font-bold rounded-xl transition-all transform hover:-translate-y-1 glow-hover" href="#projects" data-es="Ver Mi Trabajo" data-en="View My Work">
@@ -268,22 +268,23 @@
 <span class="material-icons text-primary">code</span>
 <span class="font-bold">TypeScript</span>
 </div>
+<div class="px-8 py-4 bg-slate-100 dark:bg-slate-900 border-b-4 border-primary rounded-2xl flex items-center gap-3 transition-transform hover:-translate-y-2">
+<span class="material-icons text-primary">code</span>
+<span class="font-bold">JavaScript</span>
+</div>
 <div class="px-8 py-4 bg-slate-100 dark:bg-slate-900 border-b-4 border-secondary rounded-2xl flex items-center gap-3 transition-transform hover:-translate-y-2">
 <span class="material-icons text-secondary">dynamic_feed</span>
 <span class="font-bold">React / Next.js</span>
 </div>
 <div class="px-8 py-4 bg-slate-100 dark:bg-slate-900 border-b-4 border-primary rounded-2xl flex items-center gap-3 transition-transform hover:-translate-y-2">
 <span class="material-icons text-primary">dns</span>
-<span class="font-bold">Node.js</span>
+<span class="font-bold">Supabase</span>
 </div>
 <div class="px-8 py-4 bg-slate-100 dark:bg-slate-900 border-b-4 border-secondary rounded-2xl flex items-center gap-3 transition-transform hover:-translate-y-2">
 <span class="material-icons text-secondary">storage</span>
 <span class="font-bold">PostgreSQL</span>
 </div>
-<div class="px-8 py-4 bg-slate-100 dark:bg-slate-900 border-b-4 border-primary rounded-2xl flex items-center gap-3 transition-transform hover:-translate-y-2">
-<span class="material-icons text-primary">cloud</span>
-<span class="font-bold">AWS / Docker</span>
-</div>
+
 <div class="px-8 py-4 bg-slate-100 dark:bg-slate-900 border-b-4 border-secondary rounded-2xl flex items-center gap-3 transition-transform hover:-translate-y-2">
 <span class="material-icons text-secondary">terminal</span>
 <span class="font-bold">GraphQL</span>
@@ -291,6 +292,18 @@
 <div class="px-8 py-4 bg-slate-100 dark:bg-slate-900 border-b-4 border-primary rounded-2xl flex items-center gap-3 transition-transform hover:-translate-y-2">
 <span class="material-icons text-primary">layers</span>
 <span class="font-bold">Tailwind CSS</span>
+</div>
+<div class="px-8 py-4 bg-slate-100 dark:bg-slate-900 border-b-4 border-primary rounded-2xl flex items-center gap-3 transition-transform hover:-translate-y-2">
+<span class="material-icons text-primary">layers</span>
+<span class="font-bold">Boostrap CSS</span>
+</div>
+<div class="px-8 py-4 bg-slate-100 dark:bg-slate-900 border-b-4 border-primary rounded-2xl flex items-center gap-3 transition-transform hover:-translate-y-2">
+<span class="material-icons text-primary">group</span>
+<span class="font-bold">DevOps</span>
+</div>
+<div class="px-8 py-4 bg-slate-100 dark:bg-slate-900 border-b-4 border-primary rounded-2xl flex items-center gap-3 transition-transform hover:-translate-y-2">
+<span class="material-icons text-primary">star</span>
+<span class="font-bold">IA</span>
 </div>
 </div>
 </div>
@@ -302,22 +315,24 @@
 <span class="material-icons text-[120px] rotate-12 opacity-50">send</span>
 </div>
 <h2 class="text-4xl font-display font-bold mb-8" data-es="¿Listo para Construir Algo Increíble?" data-en="Ready to Build Something Incredible?">¿Listo para Construir Algo Increíble?</h2>
-<form class="space-y-6">
+<form id="contact-form" class="space-y-6">
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 <div>
-<label class="block text-sm font-semibold mb-2 ml-1" data-es="Nombre" data-en="Name">Nombre</label>
-<input class="w-full bg-white dark:bg-black/40 border-slate-200 dark:border-slate-800 focus:ring-primary focus:border-primary rounded-xl px-4 py-3 outline-none transition-all" placeholder="Juan Pérez" type="text"/>
+<label for="contact-name" class="block text-sm font-semibold mb-2 ml-1" data-es="Nombre" data-en="Name">Nombre</label>
+<input id="contact-name" name="name" class="w-full bg-white dark:bg-black/40 border-slate-200 dark:border-slate-800 focus:ring-primary focus:border-primary rounded-xl px-4 py-3 outline-none transition-all" placeholder="Juan Pérez" type="text"/>
 </div>
 <div>
-<label class="block text-sm font-semibold mb-2 ml-1" data-es="Correo Electrónico" data-en="Email">Correo Electrónico</label>
-<input class="w-full bg-white dark:bg-black/40 border-slate-200 dark:border-slate-800 focus:ring-primary focus:border-primary rounded-xl px-4 py-3 outline-none transition-all" placeholder="juan@ejemplo.com" type="email"/>
+<label for="contact-email" class="block text-sm font-semibold mb-2 ml-1" data-es="Correo Electrónico" data-en="Email">Correo Electrónico</label>
+<input id="contact-email" name="email" class="w-full bg-white dark:bg-black/40 border-slate-200 dark:border-slate-800 focus:ring-primary focus:border-primary rounded-xl px-4 py-3 outline-none transition-all" placeholder="juan@ejemplo.com" type="email"/>
+</div>
 </div>
 </div>
 <div>
-<label class="block text-sm font-semibold mb-2 ml-1" data-es="Mensaje" data-en="Message">Mensaje</label>
-<textarea class="w-full bg-white dark:bg-black/40 border-slate-200 dark:border-slate-800 focus:ring-primary focus:border-primary rounded-xl px-4 py-3 outline-none transition-all" placeholder="Cuéntame sobre tu proyecto..." rows="4"></textarea>
+<label for="contact-message" class="block text-sm font-semibold mb-2 ml-1" data-es="Mensaje" data-en="Message">Mensaje</label>
+<textarea id="contact-message" name="message" class="w-full bg-white dark:bg-black/40 border-slate-200 dark:border-slate-800 focus:ring-primary focus:border-primary rounded-xl px-4 py-3 outline-none transition-all" placeholder="Cuéntame sobre tu proyecto..." rows="4"></textarea>
 </div>
-<button class="w-full py-4 bg-primary hover:bg-cyan-500 text-white font-bold rounded-xl transition-all shadow-lg shadow-cyan-500/20" type="submit" data-es="Enviar Mensaje" data-en="Send Message">
+<div id="contact-feedback" class="text-sm mt-2"></div>
+<button id="contact-submit" class="w-full py-4 bg-primary hover:bg-cyan-500 text-white font-bold rounded-xl transition-all shadow-lg shadow-cyan-500/20" type="submit" data-es="Enviar Mensaje" data-en="Send Message">
                         Enviar Mensaje
                     </button>
 </form>
@@ -328,10 +343,9 @@
 <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
 <div class="text-2xl font-display font-bold text-gradient">DEV.ARC</div>
 <div class="flex gap-6">
-<a class="hover:text-primary transition-colors" href="#">GitHub</a>
-<a class="hover:text-primary transition-colors" href="#">LinkedIn</a>
-<a class="hover:text-primary transition-colors" href="#">Twitter</a>
-<a class="hover:text-primary transition-colors" href="#">Dribbble</a>
+<a class="hover:text-primary transition-colors" href="https://github.com/alobarros8">GitHub</a>
+<a class="hover:text-primary transition-colors" href="https://www.linkedin.com/in/alejandro-barros-57933a257/">LinkedIn</a>
+
 </div>
 <p class="text-slate-500 text-sm" data-es="© 2024 Portafolio. Todos los derechos reservados." data-en="© 2024 Portfolio. All rights reserved.">© 2024 Portafolio. Todos los derechos reservados.</p>
 </div>
@@ -439,6 +453,72 @@
         modal.classList.add('hidden');
         modal.classList.remove('flex');
         document.body.style.overflow = 'auto';
+    }
+
+    // Contact form: support Formspree (recommended) with mailto fallback
+    const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xlgwrdep'; // <- replace YOUR_FORM_ID with your Formspree ID
+
+    const contactForm = document.getElementById('contact-form');
+    const contactFeedback = document.getElementById('contact-feedback');
+    const contactSubmit = document.getElementById('contact-submit');
+
+    function showContactMessage(message, isError = false) {
+        if (contactFeedback) {
+            contactFeedback.textContent = message;
+            contactFeedback.classList.remove('text-green-600', 'text-red-600');
+            contactFeedback.classList.add(isError ? 'text-red-600' : 'text-green-600');
+            setTimeout(() => { if (contactFeedback) contactFeedback.textContent = ''; }, 5000);
+        } else {
+            alert(message);
+        }
+    }
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const rawName = document.getElementById('contact-name')?.value.trim() || '';
+            const rawEmail = document.getElementById('contact-email')?.value.trim() || '';
+            const rawMessage = document.getElementById('contact-message')?.value.trim() || '';
+
+            const subject = currentLanguage === 'es' ? 'Contacto desde Portafolio' : 'Contact from Portfolio';
+            const nameLabel = currentLanguage === 'es' ? 'Nombre' : 'Name';
+            const emailLabel = currentLanguage === 'es' ? 'Correo' : 'Email';
+            const messageLabel = currentLanguage === 'es' ? 'Mensaje' : 'Message';
+
+            // If the user replaced the placeholder FORMSPREE_ENDPOINT, use it
+            if (FORMSPREE_ENDPOINT && !FORMSPREE_ENDPOINT.includes('YOUR_FORM_ID')) {
+                const formData = new FormData();
+                formData.append('name', rawName);
+                formData.append('email', rawEmail);
+                formData.append('message', rawMessage);
+                formData.append('_subject', subject);
+
+                try {
+                    contactSubmit.disabled = true;
+                    const res = await fetch(FORMSPREE_ENDPOINT, {
+                        method: 'POST',
+                        body: formData,
+                        headers: { 'Accept': 'application/json' }
+                    });
+                    contactSubmit.disabled = false;
+                    if (res.ok) {
+                        showContactMessage(currentLanguage === 'es' ? 'Mensaje enviado correctamente.' : 'Message sent successfully.');
+                        contactForm.reset();
+                    } else {
+                        showContactMessage(currentLanguage === 'es' ? 'Error al enviar. Intenta nuevamente.' : 'Error sending message. Please try again.', true);
+                    }
+                } catch (err) {
+                    contactSubmit.disabled = false;
+                    showContactMessage(currentLanguage === 'es' ? 'Error de red. Revisa tu conexión.' : 'Network error. Check your connection.', true);
+                }
+                return;
+            }
+
+            // Fallback: open user's email client
+            const body = `${nameLabel}: ${rawName}\n${emailLabel}: ${rawEmail}\n\n${messageLabel}:\n${rawMessage}`;
+            const mailto = `mailto:alobarros8@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            window.location.href = mailto;
+        });
     }
 
     // Keyboard support for modals
