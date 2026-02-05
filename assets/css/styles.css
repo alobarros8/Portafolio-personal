@@ -1,0 +1,41 @@
+/* Core visual helpers moved from inline HTML */
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.glow-hover:hover {
+  box-shadow: 0 0 25px -5px rgba(6, 182, 212, 0.5);
+}
+.text-gradient {
+  background: linear-gradient(to right, #06b6d4, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.bg-grid {
+  background-size: 40px 40px;
+  background-image: radial-gradient(circle, #333 1px, transparent 1px);
+}
+
+/* Language button styles (previously injected by JS) */
+.language-btn {
+  cursor: pointer;
+  color: #475569;
+}
+.dark .language-btn {
+  color: #cbd5e1;
+}
+.language-btn.active {
+  background-color: #06b6d4;
+  color: white;
+}
+
+/* Contact feedback message */
+#contact-feedback {
+  min-height: 1.25rem;
+}
+
+/* Small responsive tweaks */
+@media (max-width: 640px) {
+  .text-6xl { font-size: 2.25rem; }
+}

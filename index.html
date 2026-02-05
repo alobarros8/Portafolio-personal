@@ -30,25 +30,7 @@
             },
         };
     </script>
-<style>
-        .glass {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        .glow-hover:hover {
-            box-shadow: 0 0 25px -5px rgba(6, 182, 212, 0.5);
-        }
-        .text-gradient {
-            background: linear-gradient(to right, #06b6d4, #8b5cf6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .bg-grid {
-            background-size: 40px 40px;
-            background-image: radial-gradient(circle, #333 1px, transparent 1px);
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body class="bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-100 font-body transition-colors duration-300">
 <nav class="fixed top-0 w-full z-50 px-6 py-4">
@@ -566,25 +548,10 @@
         }
     });
 
-    // Style for language buttons
-    const styleElement = document.createElement('style');
-    styleElement.textContent = `
-        .language-btn {
-            cursor: pointer;
-            color: #475569;
-        }
-        
-        .dark .language-btn {
-            color: #cbd5e1;
-        }
-        
-        .language-btn.active {
-            background-color: #06b6d4;
-            color: white;
-        }
-    `;
-    document.head.appendChild(styleElement);
+    // External scripts/styles are loaded from assets/js/main.js and assets/css/styles.css
+    // Keep this script tag to load the external JS with defer
 </script>
+<script src="assets/js/main.js" defer></script>
 
 </body>
 </html>
