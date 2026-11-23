@@ -1,10 +1,17 @@
+const PROJECT_ORDER = ['appcontabilidad', 'alda', 'tiendafacil', 'armadorpc'];
+
 const PROJECTS = {
   appcontabilidad: {
+    category: { es: 'Gestión Comercial', en: 'Business Management' },
     title: { es: 'App Contabilidad', en: 'Accounting App' },
     badges: [
       { label: 'Next.js', color: 'primary' },
       { label: 'Supabase', color: 'secondary' }
     ],
+    accessNote: {
+      es: 'La aplicación en producción requiere iniciar sesión para proteger los datos comerciales. Podés recorrer todas las vistas en la galería inferior.',
+      en: 'The live production app requires sign-in to protect business records. You can inspect the main views in the gallery below.'
+    },
     description: {
       es: 'App Contabilidad es una solución integral diseñada para facilitar la gestión contable de pequeños negocios. La aplicación proporciona una interfaz moderna e intuitiva que permite a los empresarios administrar sus operaciones financieras de manera eficiente.',
       en: 'App Contabilidad is a comprehensive solution designed to facilitate accounting management for small businesses. The application provides a modern and intuitive interface that allows entrepreneurs to manage their financial operations efficiently.'
@@ -29,16 +36,17 @@ const PROJECTS = {
     ],
     gallery: [
       {
-        src: 'assets/Apps/AppContabilidad%20dashboard.png',
-        alt: { es: 'Dashboard', en: 'Dashboard' }
+        src: 'assets/Apps/app-contabilidad-dashboard.webp',
+        alt: { es: 'Dashboard principal', en: 'Main Dashboard' }
       },
       {
-        src: 'assets/Apps/AppContabilidadProducts.png',
+        src: 'assets/Apps/app-contabilidad-products.webp',
         alt: { es: 'Gestión de Productos', en: 'Product Management' }
       },
       {
-        src: 'assets/Apps/AppContabilidadVenta.png',
-        alt: { es: 'Registro de Ventas', en: 'Sales Records' }
+        src: 'assets/Apps/app-contabilidad-venta.webp',
+        alt: { es: 'Registro de Ventas', en: 'Sales Records' },
+        fit: 'contain'
       }
     ],
     techFeatures: [
@@ -57,6 +65,7 @@ const PROJECTS = {
     githubUrl: null
   },
   alda: {
+    category: { es: 'E-Commerce', en: 'E-Commerce' },
     title: { es: 'ALDA · Tienda Online', en: 'ALDA · E-Commerce Store' },
     badges: [
       { label: 'Next.js', color: 'primary' },
@@ -87,15 +96,15 @@ const PROJECTS = {
     ],
     gallery: [
       {
-        src: 'assets/Apps/AldaHome.png',
+        src: 'assets/Apps/alda-home.webp',
         alt: { es: 'ALDA - Página principal', en: 'ALDA - Storefront Home' }
       },
       {
-        src: 'assets/Apps/AldaCatalogo.png',
+        src: 'assets/Apps/alda-catalogo.webp',
         alt: { es: 'ALDA - Catálogo filtrable', en: 'ALDA - Filterable Catalog' }
       },
       {
-        src: 'assets/Apps/AldaProducto.png',
+        src: 'assets/Apps/alda-producto.webp',
         alt: { es: 'ALDA - Detalle de producto y medios de pago', en: 'ALDA - Product Detail & Payment Tiers' }
       }
     ],
@@ -115,6 +124,7 @@ const PROJECTS = {
     githubUrl: null
   },
   tiendafacil: {
+    category: { es: 'SaaS Multi-Tenant', en: 'Multi-Tenant SaaS' },
     title: { es: 'Tienda Fácil · Armador de Tiendas', en: 'Tienda Fácil · Online Store Builder' },
     badges: [
       { label: 'Next.js', color: 'primary' },
@@ -145,15 +155,15 @@ const PROJECTS = {
     ],
     gallery: [
       {
-        src: 'assets/Apps/TiendaFacilHero.png',
+        src: 'assets/Apps/tienda-facil-hero.webp',
         alt: { es: 'Tienda Fácil - Landing SaaS', en: 'Tienda Fácil - SaaS Landing' }
       },
       {
-        src: 'assets/Apps/TiendaFacilPlantillas.png',
+        src: 'assets/Apps/tienda-facil-plantillas.webp',
         alt: { es: 'Tienda Fácil - Selector interactivo de plantillas', en: 'Tienda Fácil - Interactive Template Previewer' }
       },
       {
-        src: 'assets/Apps/TiendaFacilStorefront.png',
+        src: 'assets/Apps/tienda-facil-storefront.webp',
         alt: { es: 'Tienda Fácil - Tienda generada con plantilla Moderna', en: 'Tienda Fácil - Modern Storefront Template' }
       }
     ],
@@ -173,6 +183,7 @@ const PROJECTS = {
     githubUrl: null
   },
   armadorpc: {
+    category: { es: 'Herramienta Interactiva', en: 'Interactive Web Tool' },
     title: { es: 'Armador de PC', en: 'PC Builder & Optimizer' },
     badges: [
       { label: 'React', color: 'primary' },
@@ -203,15 +214,15 @@ const PROJECTS = {
     ],
     gallery: [
       {
-        src: 'assets/Apps/ArmadorPCBuilder.png',
+        src: 'assets/Apps/armador-pc-builder.webp',
         alt: { es: 'Armador de PC - Configurador y telemetría', en: 'Armador de PC - Configurator & Telemetry' }
       },
       {
-        src: 'assets/Apps/ArmadorPCOptimizador.png',
+        src: 'assets/Apps/armador-pc-optimizador.webp',
         alt: { es: 'Armador de PC - Propuestas por presupuesto', en: 'Armador de PC - Budget Optimizer Proposals' }
       },
       {
-        src: 'assets/Apps/ArmadorPCPresets.png',
+        src: 'assets/Apps/armador-pc-presets.webp',
         alt: { es: 'Armador de PC - Presets por gama', en: 'Armador de PC - Curated Tier Presets' }
       }
     ],
@@ -232,92 +243,326 @@ const PROJECTS = {
   }
 };
 
-// Language switcher functionality
-const languageButtons = document.querySelectorAll('.language-btn');
-let currentLanguage = localStorage.getItem('language') || 'es';
+const SECTION_IDS = ['home', 'projects', 'stack', 'about', 'contact'];
+const EMAIL_ADDRESS = 'alobarros8@gmail.com';
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xlgwrdep';
+
+const prefersReducedMotion = () =>
+  window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+let currentLanguage = localStorage.getItem('language') === 'en' ? 'en' : 'es';
 let activeProjectId = null;
+let activeGalleryIndex = 0;
+let lastProjectTrigger = null;
+let lastLightboxTrigger = null;
+let projectModalTimer = null;
+let fullscreenModalTimer = null;
+let feedbackTimer = null;
+let copyEmailTimer = null;
+let isMobileMenuOpen = false;
 
-// Set initial language
-initializeLanguage();
+// DOM references
+const languageButtons = document.querySelectorAll('.language-btn');
+const themeToggleBtn = document.getElementById('theme-toggle');
+const themeIcon = document.getElementById('theme-icon');
+const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+const mobileMenuIcon = document.getElementById('mobile-menu-icon');
+const mobileMenu = document.getElementById('mobile-menu');
+const navLinks = document.querySelectorAll('.nav-link[data-section]');
 
-function initializeLanguage() {
-  document.documentElement.lang = currentLanguage;
-  updateButtonStates();
-  switchLanguage(currentLanguage);
-}
+const projectModal = document.getElementById('projectModal');
+const projectModalContent = document.getElementById('projectModalContent');
+const closeProjectModalBtn = document.getElementById('closeProjectModalBtn');
+const prevProjectBtn = document.getElementById('prevProjectBtn');
+const nextProjectBtn = document.getElementById('nextProjectBtn');
 
-function updateButtonStates() {
-  languageButtons.forEach(btn => {
-    if (btn.dataset.lang === currentLanguage) {
-      btn.classList.add('active', 'bg-primary', 'text-white');
-      btn.classList.remove('text-slate-600', 'dark:text-slate-400');
-    } else {
-      btn.classList.remove('active', 'bg-primary', 'text-white');
-      btn.classList.add('text-slate-600', 'dark:text-slate-400');
-    }
-  });
-}
+const fullscreenModal = document.getElementById('fullscreenImageModal');
+const fullscreenImg = document.getElementById('fullscreenImage');
+const fullscreenCaption = document.getElementById('fullscreenCaption');
+const fullscreenCounter = document.getElementById('fullscreenCounter');
+const closeFullscreenBtn = document.getElementById('closeFullscreenBtn');
+const fullscreenPrevBtn = document.getElementById('fullscreenPrevBtn');
+const fullscreenNextBtn = document.getElementById('fullscreenNextBtn');
 
-function switchLanguage(lang) {
-  // Handle all elements with data-es and data-en attributes
-  const elements = document.querySelectorAll('[data-es][data-en]');
-  elements.forEach(element => {
-    const text = lang === 'es' ? element.dataset.es : element.dataset.en;
+const copyEmailBtn = document.getElementById('copy-email-btn');
+const copyEmailIcon = document.getElementById('copy-email-icon');
+const copyEmailText = document.getElementById('copy-email-text');
 
-    // Check if element has child elements (like spans inside)
-    if (element.children.length > 0) {
-      // For elements with children (mixed content), update each child
-      const children = element.querySelectorAll('[data-es][data-en]');
-      // Don't update this element's text if it has children with data attributes
-      if (children.length > 0) {
-        // Let the children handle their own translation
-        return;
-      }
-    }
-
-    // For simple text elements or leaf nodes
-    element.textContent = text;
-  });
-
-  // Update title
-  const titleEs = 'Portafolio Full Stack Developer Innovador';
-  const titleEn = 'Innovative Full Stack Developer Portfolio';
-  document.title = lang === 'es' ? titleEs : titleEn;
-
-  currentLanguage = lang;
-  localStorage.setItem('language', lang);
-  updateButtonStates();
-
-  if (activeProjectId) {
-    renderProjectModal(activeProjectId);
-  }
-}
-
-languageButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    const lang = button.dataset.lang;
-    switchLanguage(lang);
-  });
-});
+const contactForm = document.getElementById('contact-form');
+const contactFeedback = document.getElementById('contact-feedback');
+const contactSubmit = document.getElementById('contact-submit');
+const contactSubmitText = document.getElementById('contact-submit-text');
+const contactSubmitIcon = document.getElementById('contact-submit-icon');
 
 function resolveLocalizedText(value, lang) {
   return typeof value === 'string' ? value : value[lang];
 }
 
+function getFocusableElements(container) {
+  if (!container) return [];
+  return Array.from(
+    container.querySelectorAll(
+      'a[href], button:not([disabled]), input:not([disabled]), textarea:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])'
+    )
+  ).filter(el => el.offsetParent !== null || el === document.activeElement);
+}
+
+function syncBodyScrollLock() {
+  const projectOpen = projectModal && !projectModal.classList.contains('hidden');
+  const fullscreenOpen = fullscreenModal && !fullscreenModal.classList.contains('hidden');
+  document.body.style.overflow = projectOpen || fullscreenOpen ? 'hidden' : '';
+}
+
+// Theme management
+function isDarkMode() {
+  return document.documentElement.classList.contains('dark');
+}
+
+function syncThemeButton() {
+  if (!themeToggleBtn || !themeIcon) return;
+  const dark = isDarkMode();
+  themeIcon.textContent = dark ? 'light_mode' : 'dark_mode';
+  themeToggleBtn.setAttribute('aria-pressed', String(dark));
+
+  const label = dark
+    ? currentLanguage === 'es'
+      ? 'Cambiar a modo claro'
+      : 'Switch to light mode'
+    : currentLanguage === 'es'
+      ? 'Cambiar a modo oscuro'
+      : 'Switch to dark mode';
+  themeToggleBtn.setAttribute('aria-label', label);
+}
+
+if (themeToggleBtn) {
+  themeToggleBtn.addEventListener('click', () => {
+    const nextDark = !isDarkMode();
+    document.documentElement.classList.toggle('dark', nextDark);
+    try {
+      localStorage.setItem('theme', nextDark ? 'dark' : 'light');
+    } catch (e) {}
+    syncThemeButton();
+  });
+}
+
+if (window.matchMedia) {
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+    let saved = null;
+    try {
+      saved = localStorage.getItem('theme');
+    } catch (err) {}
+    if (!saved) {
+      document.documentElement.classList.toggle('dark', e.matches);
+      syncThemeButton();
+    }
+  });
+}
+
+// Mobile menu
+function setMobileMenuOpen(open) {
+  isMobileMenuOpen = Boolean(open);
+  if (!mobileMenu || !mobileMenuToggle || !mobileMenuIcon) return;
+
+  mobileMenu.classList.toggle('hidden', !isMobileMenuOpen);
+  mobileMenuToggle.setAttribute('aria-expanded', String(isMobileMenuOpen));
+  mobileMenuIcon.textContent = isMobileMenuOpen ? 'close' : 'menu';
+
+  const label = isMobileMenuOpen
+    ? currentLanguage === 'es'
+      ? 'Cerrar menú de navegación'
+      : 'Close navigation menu'
+    : currentLanguage === 'es'
+      ? 'Abrir menú de navegación'
+      : 'Open navigation menu';
+  mobileMenuToggle.setAttribute('aria-label', label);
+}
+
+if (mobileMenuToggle) {
+  mobileMenuToggle.addEventListener('click', () => {
+    setMobileMenuOpen(!isMobileMenuOpen);
+  });
+}
+
+if (mobileMenu) {
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => setMobileMenuOpen(false));
+  });
+}
+
+document.addEventListener('click', (e) => {
+  if (!isMobileMenuOpen) return;
+  const headerNav = document.querySelector('header nav');
+  if (headerNav && !headerNav.contains(e.target)) {
+    setMobileMenuOpen(false);
+  }
+});
+
+// Internationalization
+function updateLanguageButtons() {
+  languageButtons.forEach(btn => {
+    const isActive = btn.dataset.lang === currentLanguage;
+    btn.classList.toggle('active', isActive);
+    btn.setAttribute('aria-pressed', String(isActive));
+  });
+}
+
+function switchLanguage(lang) {
+  currentLanguage = lang === 'en' ? 'en' : 'es';
+  document.documentElement.lang = currentLanguage;
+
+  document.querySelectorAll('[data-es][data-en]').forEach(element => {
+    if (element.querySelector('[data-es][data-en]')) {
+      return;
+    }
+    const text = currentLanguage === 'es' ? element.dataset.es : element.dataset.en;
+    element.textContent = text;
+  });
+
+  document.querySelectorAll('[data-placeholder-es][data-placeholder-en]').forEach(element => {
+    element.placeholder =
+      currentLanguage === 'es' ? element.dataset.placeholderEs : element.dataset.placeholderEn;
+  });
+
+  document.querySelectorAll('[data-aria-es][data-aria-en]').forEach(element => {
+    element.setAttribute(
+      'aria-label',
+      currentLanguage === 'es' ? element.dataset.ariaEs : element.dataset.ariaEn
+    );
+  });
+
+  document.title =
+    currentLanguage === 'es'
+      ? 'Alejandro Barros · Desarrollador Full Stack'
+      : 'Alejandro Barros · Full Stack Developer';
+
+  try {
+    localStorage.setItem('language', currentLanguage);
+  } catch (e) {}
+
+  updateLanguageButtons();
+  syncThemeButton();
+  setMobileMenuOpen(isMobileMenuOpen);
+
+  if (activeProjectId) {
+    renderProjectModal(activeProjectId);
+  }
+  if (fullscreenModal && !fullscreenModal.classList.contains('hidden')) {
+    renderFullscreenImage();
+  }
+}
+
+languageButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    switchLanguage(button.dataset.lang);
+  });
+});
+
+// ScrollSpy & Reveal on Scroll
+function setActiveNavSection(sectionId) {
+  navLinks.forEach(link => {
+    const matches = link.dataset.section === sectionId;
+    link.classList.toggle('active', matches);
+    if (matches) {
+      link.setAttribute('aria-current', 'location');
+    } else {
+      link.removeAttribute('aria-current');
+    }
+  });
+}
+
+function initScrollSpy() {
+  const sections = SECTION_IDS.map(id => document.getElementById(id)).filter(Boolean);
+  if (!sections.length) return;
+
+  if (typeof IntersectionObserver !== 'undefined') {
+    const visibleRatios = new Map();
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          visibleRatios.set(entry.target.id, entry.isIntersecting ? entry.intersectionRatio : 0);
+        });
+
+        let bestId = null;
+        let bestRatio = 0;
+        SECTION_IDS.forEach(id => {
+          const ratio = visibleRatios.get(id) || 0;
+          if (ratio > bestRatio) {
+            bestRatio = ratio;
+            bestId = id;
+          }
+        });
+
+        if (bestId) {
+          setActiveNavSection(bestId);
+        }
+      },
+      {
+        rootMargin: '-25% 0px -45% 0px',
+        threshold: [0, 0.15, 0.35, 0.6]
+      }
+    );
+
+    sections.forEach(sec => observer.observe(sec));
+  }
+
+  window.addEventListener(
+    'scroll',
+    () => {
+      if (window.scrollY < 100) {
+        setActiveNavSection('home');
+      } else if (
+        window.innerHeight + window.scrollY >=
+        document.documentElement.scrollHeight - 40
+      ) {
+        setActiveNavSection('contact');
+      }
+    },
+    { passive: true }
+  );
+
+  setActiveNavSection('home');
+}
+
+function initScrollReveal() {
+  const revealItems = document.querySelectorAll('.reveal');
+  if (!revealItems.length) return;
+
+  if (prefersReducedMotion() || typeof IntersectionObserver === 'undefined') {
+    revealItems.forEach(el => el.classList.add('is-visible'));
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+  );
+
+  revealItems.forEach(el => observer.observe(el));
+}
+
+// Project Modal & Gallery
 function createActionLink(href, labelText, iconName, isPrimary) {
   const link = document.createElement('a');
   link.href = href;
   link.target = '_blank';
   link.rel = 'noopener noreferrer';
   link.className = isPrimary
-    ? 'flex-1 px-8 py-4 bg-primary hover:bg-cyan-500 text-white font-bold rounded-xl transition-all transform hover:-translate-y-1 glow-hover flex items-center justify-center gap-2'
-    : 'flex-1 px-8 py-4 border-2 border-slate-300 dark:border-slate-700 hover:border-primary dark:hover:border-primary font-bold rounded-xl transition-all flex items-center justify-center gap-2';
+    ? 'flex-1 px-6 py-3.5 bg-cyan-700 hover:bg-cyan-800 text-white dark:bg-cyan-400 dark:hover:bg-cyan-300 dark:text-slate-950 font-bold rounded-xl transition-all transform hover:-translate-y-0.5 glow-hover flex items-center justify-center gap-2'
+    : 'flex-1 px-6 py-3.5 border-2 border-slate-300 dark:border-slate-700 hover:border-cyan-700 dark:hover:border-cyan-400 text-slate-800 dark:text-slate-100 font-bold rounded-xl transition-all flex items-center justify-center gap-2';
 
   const labelSpan = document.createElement('span');
   labelSpan.textContent = labelText;
 
   const iconSpan = document.createElement('span');
-  iconSpan.className = 'material-icons text-sm';
+  iconSpan.className = 'material-icons text-base';
+  iconSpan.setAttribute('aria-hidden', 'true');
   iconSpan.textContent = iconName;
 
   link.append(labelSpan, iconSpan);
@@ -328,33 +573,52 @@ function renderProjectModal(projectId) {
   const project = PROJECTS[projectId];
   if (!project) return;
 
-  const lang = currentLanguage === 'en' ? 'en' : 'es';
+  const lang = currentLanguage;
 
+  const categoryEl = document.getElementById('modalProjectCategory');
   const titleEl = document.getElementById('modalProjectTitle');
   const badgesEl = document.getElementById('modalProjectBadges');
+  const noteBoxEl = document.getElementById('modalProjectNote');
+  const noteTextEl = document.getElementById('modalProjectNoteText');
   const descriptionEl = document.getElementById('modalProjectDescription');
   const problemsEl = document.getElementById('modalProjectProblems');
   const galleryEl = document.getElementById('modalProjectGallery');
   const techEl = document.getElementById('modalProjectTech');
   const actionsEl = document.getElementById('modalProjectActions');
 
+  if (categoryEl) {
+    categoryEl.textContent = resolveLocalizedText(project.category, lang);
+  }
+
   if (titleEl) {
-    titleEl.textContent = project.title[lang];
+    titleEl.textContent = resolveLocalizedText(project.title, lang);
   }
 
   if (badgesEl) {
     badgesEl.replaceChildren();
     project.badges.forEach(badge => {
       const span = document.createElement('span');
-      const colorClass = badge.color === 'secondary' ? 'text-secondary' : 'text-primary';
-      span.className = `text-xs font-bold uppercase tracking-widest ${colorClass}`;
+      span.className =
+        badge.color === 'secondary'
+          ? 'px-2.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-violet-50 dark:bg-violet-950/60 text-violet-700 dark:text-violet-400'
+          : 'px-2.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-cyan-50 dark:bg-cyan-950/60 text-cyan-700 dark:text-cyan-400';
       span.textContent = badge.label;
       badgesEl.appendChild(span);
     });
   }
 
+  if (noteBoxEl && noteTextEl) {
+    if (project.accessNote) {
+      noteTextEl.textContent = resolveLocalizedText(project.accessNote, lang);
+      noteBoxEl.classList.remove('hidden');
+    } else {
+      noteTextEl.textContent = '';
+      noteBoxEl.classList.add('hidden');
+    }
+  }
+
   if (descriptionEl) {
-    descriptionEl.textContent = project.description[lang];
+    descriptionEl.textContent = resolveLocalizedText(project.description, lang);
   }
 
   if (problemsEl) {
@@ -364,11 +628,12 @@ function renderProjectModal(projectId) {
       li.className = 'flex items-start gap-3';
 
       const icon = document.createElement('span');
-      icon.className = 'material-icons text-primary flex-shrink-0 mt-1';
+      icon.className = 'material-icons text-cyan-700 dark:text-cyan-400 shrink-0 mt-0.5 text-xl';
+      icon.setAttribute('aria-hidden', 'true');
       icon.textContent = 'check_circle';
 
       const text = document.createElement('span');
-      text.textContent = problem[lang];
+      text.textContent = resolveLocalizedText(problem, lang);
 
       li.append(icon, text);
       problemsEl.appendChild(li);
@@ -377,26 +642,51 @@ function renderProjectModal(projectId) {
 
   if (galleryEl) {
     galleryEl.replaceChildren();
-    project.gallery.forEach(item => {
-      const card = document.createElement('div');
-      card.className = 'group relative rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 hover:shadow-xl transition-all cursor-pointer';
+    project.gallery.forEach((item, index) => {
+      const figure = document.createElement('figure');
+      figure.className =
+        'group flex flex-col rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950/50 hover:shadow-lg transition-all';
+
+      const button = document.createElement('button');
+      button.type = 'button';
+      const altText = resolveLocalizedText(item.alt, lang);
+      button.setAttribute(
+        'aria-label',
+        lang === 'es' ? `Ampliar imagen: ${altText}` : `Expand image: ${altText}`
+      );
+      button.className =
+        'relative w-full h-52 overflow-hidden bg-slate-200 dark:bg-slate-950 cursor-pointer focus:outline-none';
 
       const img = document.createElement('img');
       img.src = item.src;
-      img.alt = item.alt[lang];
-      img.className = 'w-full h-64 object-cover object-top group-hover:scale-105 transition-transform duration-300';
+      img.alt = altText;
+      img.loading = 'lazy';
+      img.decoding = 'async';
+      img.className =
+        item.fit === 'contain'
+          ? 'w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300'
+          : 'w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300';
 
       const overlay = document.createElement('div');
-      overlay.className = 'pointer-events-none absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all flex items-center justify-center opacity-0 group-hover:opacity-100';
+      overlay.className =
+        'pointer-events-none absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all flex items-center justify-center opacity-0 group-hover:opacity-100';
 
       const zoomIcon = document.createElement('span');
       zoomIcon.className = 'material-icons text-white text-3xl';
+      zoomIcon.setAttribute('aria-hidden', 'true');
       zoomIcon.textContent = 'zoom_in';
 
       overlay.appendChild(zoomIcon);
-      card.append(img, overlay);
-      card.addEventListener('click', () => toggleFullscreenImage(img));
-      galleryEl.appendChild(card);
+      button.append(img, overlay);
+      button.addEventListener('click', () => openFullscreenImage(index, button));
+
+      const caption = document.createElement('figcaption');
+      caption.className =
+        'px-3.5 py-2.5 text-xs font-medium text-slate-600 dark:text-slate-300 border-t border-slate-200/80 dark:border-slate-800';
+      caption.textContent = altText;
+
+      figure.append(button, caption);
+      galleryEl.appendChild(figure);
     });
   }
 
@@ -404,15 +694,18 @@ function renderProjectModal(projectId) {
     techEl.replaceChildren();
     project.techFeatures.forEach(feature => {
       const tile = document.createElement('div');
-      tile.className = 'p-4 bg-slate-50 dark:bg-slate-800 rounded-xl';
+      tile.className =
+        'p-4 bg-slate-50 dark:bg-slate-800/70 border border-slate-200/80 dark:border-slate-700/70 rounded-2xl';
 
       const label = document.createElement('span');
-      const colorClass = feature.color === 'secondary' ? 'text-secondary' : 'text-primary';
-      label.className = `text-xs ${colorClass} font-bold uppercase tracking-widest`;
+      label.className =
+        feature.color === 'secondary'
+          ? 'text-xs font-bold uppercase tracking-wider text-violet-700 dark:text-violet-400'
+          : 'text-xs font-bold uppercase tracking-wider text-cyan-700 dark:text-cyan-400';
       label.textContent = resolveLocalizedText(feature.label, lang);
 
       const value = document.createElement('p');
-      value.className = 'font-bold mt-2';
+      value.className = 'font-bold text-slate-900 dark:text-white mt-1.5 text-sm sm:text-base';
       value.textContent = resolveLocalizedText(feature.value, lang);
 
       tile.append(label, value);
@@ -432,90 +725,380 @@ function renderProjectModal(projectId) {
   }
 }
 
-// Project Modal Functions
-function openProjectModal(projectId) {
-  if (!PROJECTS[projectId]) return;
+function openProjectModal(projectId, triggerEl = null) {
+  if (!PROJECTS[projectId] || !projectModal) return;
+
+  clearTimeout(projectModalTimer);
+  lastProjectTrigger = triggerEl || document.activeElement;
   activeProjectId = projectId;
   renderProjectModal(projectId);
 
-  const modal = document.getElementById('projectModal');
-  const modalContent = document.getElementById('projectModalContent');
-  if (modalContent) {
-    modalContent.scrollTop = 0;
+  if (projectModalContent) {
+    projectModalContent.scrollTop = 0;
   }
-  modal.classList.remove('hidden');
-  modal.classList.add('flex');
-  document.body.style.overflow = 'hidden';
-}
 
-function closeProjectModal(event) {
-  // Only close if clicking on the background, not the modal content
-  if (event && event.target.id !== 'projectModal') {
-    return;
-  }
-  const modal = document.getElementById('projectModal');
-  modal.classList.add('hidden');
-  modal.classList.remove('flex');
-  activeProjectId = null;
-  document.body.style.overflow = 'auto';
-}
+  projectModal.classList.remove('hidden');
+  projectModal.classList.add('flex');
+  projectModal.setAttribute('aria-hidden', 'false');
+  syncBodyScrollLock();
 
-// Fullscreen Image Functions
-function toggleFullscreenImage(imgElement) {
-  const modal = document.getElementById('fullscreenImageModal');
-  const fullscreenImg = document.getElementById('fullscreenImage');
-  fullscreenImg.src = imgElement.src;
-  fullscreenImg.alt = imgElement.alt || 'Fullscreen';
-  modal.classList.remove('hidden');
-  modal.classList.add('flex');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeFullscreenImage(event) {
-  // Only close if clicking on the background
-  if (event && event.target.id !== 'fullscreenImageModal') {
-    return;
-  }
-  const modal = document.getElementById('fullscreenImageModal');
-  modal.classList.add('hidden');
-  modal.classList.remove('flex');
-  const projectModal = document.getElementById('projectModal');
-  if (!projectModal || projectModal.classList.contains('hidden')) {
-    document.body.style.overflow = 'auto';
-  }
-}
-
-// Contact form: support Formspree (recommended) with mailto fallback
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xlgwrdep'; // keep existing endpoint
-
-const contactForm = document.getElementById('contact-form');
-const contactFeedback = document.getElementById('contact-feedback');
-const contactSubmit = document.getElementById('contact-submit');
-
-function showContactMessage(message, isError = false) {
-  if (contactFeedback) {
-    contactFeedback.textContent = message;
-    contactFeedback.classList.remove('text-green-600', 'text-red-600');
-    contactFeedback.classList.add(isError ? 'text-red-600' : 'text-green-600');
-    setTimeout(() => { if (contactFeedback) contactFeedback.textContent = ''; }, 5000);
+  if (prefersReducedMotion()) {
+    projectModal.classList.add('is-open');
   } else {
-    alert(message);
+    requestAnimationFrame(() => {
+      projectModal.classList.add('is-open');
+    });
+  }
+
+  if (closeProjectModalBtn) {
+    closeProjectModalBtn.focus({ preventScroll: true });
+  }
+}
+
+function closeProjectModal() {
+  if (!projectModal || projectModal.classList.contains('hidden')) return;
+
+  projectModal.classList.remove('is-open');
+  projectModal.setAttribute('aria-hidden', 'true');
+
+  const finishClose = () => {
+    projectModal.classList.add('hidden');
+    projectModal.classList.remove('flex');
+    activeProjectId = null;
+    syncBodyScrollLock();
+    if (lastProjectTrigger && typeof lastProjectTrigger.focus === 'function') {
+      lastProjectTrigger.focus({ preventScroll: true });
+    }
+    lastProjectTrigger = null;
+  };
+
+  if (prefersReducedMotion()) {
+    finishClose();
+  } else {
+    clearTimeout(projectModalTimer);
+    projectModalTimer = setTimeout(finishClose, 220);
+  }
+}
+
+function stepProjectModal(delta) {
+  if (!activeProjectId) return;
+  const idx = PROJECT_ORDER.indexOf(activeProjectId);
+  if (idx === -1) return;
+
+  const nextIdx = (idx + delta + PROJECT_ORDER.length) % PROJECT_ORDER.length;
+  activeProjectId = PROJECT_ORDER[nextIdx];
+  renderProjectModal(activeProjectId);
+
+  if (projectModalContent) {
+    projectModalContent.scrollTo({
+      top: 0,
+      behavior: prefersReducedMotion() ? 'auto' : 'smooth'
+    });
+  }
+}
+
+// Event delegation for opening project modal
+document.addEventListener('click', (e) => {
+  const trigger = e.target.closest('[data-open-project]');
+  if (!trigger) return;
+  const projectId = trigger.dataset.openProject;
+  openProjectModal(projectId, trigger);
+});
+
+if (projectModal) {
+  projectModal.addEventListener('click', (e) => {
+    if (e.target === projectModal) {
+      closeProjectModal();
+    }
+  });
+}
+
+if (closeProjectModalBtn) {
+  closeProjectModalBtn.addEventListener('click', closeProjectModal);
+}
+if (prevProjectBtn) {
+  prevProjectBtn.addEventListener('click', () => stepProjectModal(-1));
+}
+if (nextProjectBtn) {
+  nextProjectBtn.addEventListener('click', () => stepProjectModal(1));
+}
+
+// Fullscreen Lightbox
+function renderFullscreenImage() {
+  if (!activeProjectId || !PROJECTS[activeProjectId] || !fullscreenImg) return;
+  const gallery = PROJECTS[activeProjectId].gallery;
+  if (!gallery.length) return;
+
+  const safeIndex = ((activeGalleryIndex % gallery.length) + gallery.length) % gallery.length;
+  activeGalleryIndex = safeIndex;
+
+  const item = gallery[safeIndex];
+  const captionText = resolveLocalizedText(item.alt, currentLanguage);
+
+  fullscreenImg.src = item.src;
+  fullscreenImg.alt = captionText;
+
+  if (fullscreenCaption) {
+    fullscreenCaption.textContent = captionText;
+  }
+  if (fullscreenCounter) {
+    fullscreenCounter.textContent = `${safeIndex + 1} / ${gallery.length}`;
+  }
+
+  const single = gallery.length <= 1;
+  if (fullscreenPrevBtn) {
+    fullscreenPrevBtn.classList.toggle('hidden', single);
+  }
+  if (fullscreenNextBtn) {
+    fullscreenNextBtn.classList.toggle('hidden', single);
+  }
+}
+
+function openFullscreenImage(index, triggerEl = null) {
+  if (!fullscreenModal || !activeProjectId) return;
+
+  clearTimeout(fullscreenModalTimer);
+  lastLightboxTrigger = triggerEl || document.activeElement;
+  activeGalleryIndex = index;
+  renderFullscreenImage();
+
+  fullscreenModal.classList.remove('hidden');
+  fullscreenModal.classList.add('flex');
+  fullscreenModal.setAttribute('aria-hidden', 'false');
+  syncBodyScrollLock();
+
+  if (prefersReducedMotion()) {
+    fullscreenModal.classList.add('is-open');
+  } else {
+    requestAnimationFrame(() => {
+      fullscreenModal.classList.add('is-open');
+    });
+  }
+
+  if (closeFullscreenBtn) {
+    closeFullscreenBtn.focus({ preventScroll: true });
+  }
+}
+
+function closeFullscreenImage() {
+  if (!fullscreenModal || fullscreenModal.classList.contains('hidden')) return;
+
+  fullscreenModal.classList.remove('is-open');
+  fullscreenModal.setAttribute('aria-hidden', 'true');
+
+  const finishClose = () => {
+    fullscreenModal.classList.add('hidden');
+    fullscreenModal.classList.remove('flex');
+    syncBodyScrollLock();
+    if (lastLightboxTrigger && typeof lastLightboxTrigger.focus === 'function') {
+      lastLightboxTrigger.focus({ preventScroll: true });
+    }
+    lastLightboxTrigger = null;
+  };
+
+  if (prefersReducedMotion()) {
+    finishClose();
+  } else {
+    clearTimeout(fullscreenModalTimer);
+    fullscreenModalTimer = setTimeout(finishClose, 220);
+  }
+}
+
+function stepFullscreenImage(delta) {
+  if (!activeProjectId || !PROJECTS[activeProjectId]) return;
+  const total = PROJECTS[activeProjectId].gallery.length;
+  if (total <= 1) return;
+  activeGalleryIndex = (activeGalleryIndex + delta + total) % total;
+  renderFullscreenImage();
+}
+
+if (fullscreenModal) {
+  fullscreenModal.addEventListener('click', (e) => {
+    if (e.target === fullscreenModal) {
+      closeFullscreenImage();
+    }
+  });
+}
+if (closeFullscreenBtn) {
+  closeFullscreenBtn.addEventListener('click', closeFullscreenImage);
+}
+if (fullscreenPrevBtn) {
+  fullscreenPrevBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    stepFullscreenImage(-1);
+  });
+}
+if (fullscreenNextBtn) {
+  fullscreenNextBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    stepFullscreenImage(1);
+  });
+}
+
+// Keyboard navigation & focus trap
+document.addEventListener('keydown', (e) => {
+  const fullscreenOpen = fullscreenModal && !fullscreenModal.classList.contains('hidden');
+  const projectOpen = projectModal && !projectModal.classList.contains('hidden');
+
+  if (e.key === 'Escape') {
+    if (fullscreenOpen) {
+      closeFullscreenImage();
+    } else if (projectOpen) {
+      closeProjectModal();
+    } else if (isMobileMenuOpen) {
+      setMobileMenuOpen(false);
+      if (mobileMenuToggle) mobileMenuToggle.focus();
+    }
+    return;
+  }
+
+  if (fullscreenOpen) {
+    if (e.key === 'ArrowLeft') {
+      e.preventDefault();
+      stepFullscreenImage(-1);
+      return;
+    }
+    if (e.key === 'ArrowRight') {
+      e.preventDefault();
+      stepFullscreenImage(1);
+      return;
+    }
+  }
+
+  if (e.key === 'Tab' && (fullscreenOpen || projectOpen)) {
+    const activeContainer = fullscreenOpen ? fullscreenModal : projectModalContent;
+    const focusables = getFocusableElements(activeContainer);
+    if (!focusables.length) return;
+
+    const first = focusables[0];
+    const last = focusables[focusables.length - 1];
+
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
+  }
+});
+
+// Copy email button
+async function copyEmailToClipboard() {
+  let copied = false;
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    try {
+      await navigator.clipboard.writeText(EMAIL_ADDRESS);
+      copied = true;
+    } catch (e) {}
+  }
+
+  if (!copied) {
+    try {
+      const temp = document.createElement('textarea');
+      temp.value = EMAIL_ADDRESS;
+      temp.setAttribute('readonly', '');
+      temp.style.position = 'fixed';
+      temp.style.opacity = '0';
+      document.body.appendChild(temp);
+      temp.select();
+      copied = document.execCommand('copy');
+      document.body.removeChild(temp);
+    } catch (e) {}
+  }
+
+  if (copied && copyEmailText && copyEmailIcon) {
+    clearTimeout(copyEmailTimer);
+    copyEmailIcon.textContent = 'check';
+    copyEmailText.textContent = currentLanguage === 'es' ? '¡Copiado!' : 'Copied!';
+
+    copyEmailTimer = setTimeout(() => {
+      copyEmailIcon.textContent = 'content_copy';
+      copyEmailText.textContent = currentLanguage === 'es' ? 'Copiar email' : 'Copy email';
+    }, 2500);
+  }
+}
+
+if (copyEmailBtn) {
+  copyEmailBtn.addEventListener('click', copyEmailToClipboard);
+}
+
+// Contact form validation & submission
+function showContactMessage(message, isError = false) {
+  if (!contactFeedback) return;
+  clearTimeout(feedbackTimer);
+  contactFeedback.textContent = message;
+  contactFeedback.className = isError
+    ? 'text-sm font-medium text-rose-700 dark:text-rose-400'
+    : 'text-sm font-medium text-emerald-700 dark:text-emerald-400';
+
+  feedbackTimer = setTimeout(() => {
+    contactFeedback.textContent = '';
+  }, 6000);
+}
+
+function setContactLoading(isLoading) {
+  if (!contactSubmit || !contactSubmitText || !contactSubmitIcon) return;
+  contactSubmit.disabled = isLoading;
+
+  if (isLoading) {
+    contactSubmitText.textContent = currentLanguage === 'es' ? 'Enviando...' : 'Sending...';
+    contactSubmitIcon.textContent = 'hourglass_top';
+  } else {
+    contactSubmitText.textContent = currentLanguage === 'es' ? 'Enviar Mensaje' : 'Send Message';
+    contactSubmitIcon.textContent = 'send';
   }
 }
 
 if (contactForm) {
   contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const rawName = document.getElementById('contact-name')?.value.trim() || '';
-    const rawEmail = document.getElementById('contact-email')?.value.trim() || '';
-    const rawMessage = document.getElementById('contact-message')?.value.trim() || '';
+
+    const nameInput = document.getElementById('contact-name');
+    const emailInput = document.getElementById('contact-email');
+    const messageInput = document.getElementById('contact-message');
+
+    const rawName = nameInput ? nameInput.value.trim() : '';
+    const rawEmail = emailInput ? emailInput.value.trim() : '';
+    const rawMessage = messageInput ? messageInput.value.trim() : '';
+
+    if (!rawName) {
+      showContactMessage(
+        currentLanguage === 'es' ? 'Por favor ingresá tu nombre.' : 'Please enter your name.',
+        true
+      );
+      if (nameInput) nameInput.focus();
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(rawEmail)) {
+      showContactMessage(
+        currentLanguage === 'es'
+          ? 'Por favor ingresá un correo electrónico válido.'
+          : 'Please enter a valid email address.',
+        true
+      );
+      if (emailInput) emailInput.focus();
+      return;
+    }
+
+    if (rawMessage.length < 10) {
+      showContactMessage(
+        currentLanguage === 'es'
+          ? 'Por favor escribí un mensaje de al menos 10 caracteres.'
+          : 'Please write a message of at least 10 characters.',
+        true
+      );
+      if (messageInput) messageInput.focus();
+      return;
+    }
 
     const subject = currentLanguage === 'es' ? 'Contacto desde Portafolio' : 'Contact from Portfolio';
     const nameLabel = currentLanguage === 'es' ? 'Nombre' : 'Name';
     const emailLabel = currentLanguage === 'es' ? 'Correo' : 'Email';
     const messageLabel = currentLanguage === 'es' ? 'Mensaje' : 'Message';
 
-    // If the user replaced the placeholder FORMSPREE_ENDPOINT, use it
     if (FORMSPREE_ENDPOINT && !FORMSPREE_ENDPOINT.includes('YOUR_FORM_ID')) {
       const formData = new FormData();
       formData.append('name', rawName);
@@ -524,42 +1107,49 @@ if (contactForm) {
       formData.append('_subject', subject);
 
       try {
-        contactSubmit.disabled = true;
+        setContactLoading(true);
         const res = await fetch(FORMSPREE_ENDPOINT, {
           method: 'POST',
           body: formData,
-          headers: { 'Accept': 'application/json' }
+          headers: { Accept: 'application/json' }
         });
-        contactSubmit.disabled = false;
+        setContactLoading(false);
+
         if (res.ok) {
-          showContactMessage(currentLanguage === 'es' ? 'Mensaje enviado correctamente.' : 'Message sent successfully.');
+          showContactMessage(
+            currentLanguage === 'es'
+              ? '¡Mensaje enviado correctamente! Te responderé pronto.'
+              : 'Message sent successfully! I will get back to you soon.'
+          );
           contactForm.reset();
         } else {
-          showContactMessage(currentLanguage === 'es' ? 'Error al enviar. Intenta nuevamente.' : 'Error sending message. Please try again.', true);
+          showContactMessage(
+            currentLanguage === 'es'
+              ? 'Error al enviar el mensaje. Intenta nuevamente.'
+              : 'Error sending message. Please try again.',
+            true
+          );
         }
       } catch (err) {
-        contactSubmit.disabled = false;
-        showContactMessage(currentLanguage === 'es' ? 'Error de red. Revisa tu conexión.' : 'Network error. Check your connection.', true);
+        setContactLoading(false);
+        showContactMessage(
+          currentLanguage === 'es'
+            ? 'Error de red. Revisá tu conexión e intentá de nuevo.'
+            : 'Network error. Please check your connection and try again.',
+          true
+        );
       }
       return;
     }
 
-    // Fallback: open user's email client
     const body = `${nameLabel}: ${rawName}\n${emailLabel}: ${rawEmail}\n\n${messageLabel}:\n${rawMessage}`;
-    const mailto = `mailto:alobarros8@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const mailto = `mailto:${EMAIL_ADDRESS}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     window.location.href = mailto;
   });
 }
 
-// Keyboard support for modals
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') {
-    const fullscreenModal = document.getElementById('fullscreenImageModal');
-    const projectModal = document.getElementById('projectModal');
-    if (fullscreenModal && !fullscreenModal.classList.contains('hidden')) {
-      closeFullscreenImage();
-    } else if (projectModal && !projectModal.classList.contains('hidden')) {
-      closeProjectModal();
-    }
-  }
-});
+// Initialize app
+switchLanguage(currentLanguage);
+syncThemeButton();
+initScrollSpy();
+initScrollReveal();

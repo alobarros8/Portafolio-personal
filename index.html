@@ -1,370 +1,1344 @@
 <!DOCTYPE html>
-<html class="scroll-smooth" lang="es"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Portafolio Full Stack Developer Alejadnro Barros</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
-<script>
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        primary: "#06b6d4", // Vibrant Cyan
-                        secondary: "#8b5cf6", // Electric Purple
-                        "background-light": "#f8fafc",
-                        "background-dark": "#0a0a0a",
-                    },
-                    fontFamily: {
-                        display: ["Space Grotesk", "sans-serif"],
-                        body: ["Inter", "sans-serif"],
-                    },
-                    borderRadius: {
-                        DEFAULT: "0.75rem",
-                    },
-                },
-            },
-        };
-    </script>
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<html class="scroll-smooth" lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alejandro Barros · Full Stack Developer</title>
+  <meta
+    name="description"
+    content="Portafolio de Alejandro Barros (DevAlo), desarrollador Full Stack en Buenos Aires especializado en Next.js, React, TypeScript y Supabase."
+  />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f8fafc" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0a0a0a" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Alejandro Barros · Full Stack Developer" />
+  <meta
+    property="og:description"
+    content="Portafolio de Alejandro Barros (DevAlo): proyectos en producción con Next.js, React, TypeScript y Supabase."
+  />
+  <meta property="og:image" content="assets/alejandro-barros-portrait.webp" />
+  <meta property="og:locale" content="es_AR" />
+  <meta property="og:locale:alternate" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Alejandro Barros · Full Stack Developer" />
+  <meta
+    name="twitter:description"
+    content="Portafolio de Alejandro Barros (DevAlo): proyectos en producción con Next.js, React, TypeScript y Supabase."
+  />
+  <meta name="twitter:image" content="assets/alejandro-barros-portrait.webp" />
+
+  <!-- Anti-FOUC theme initialization -->
+  <script>
+    (function () {
+      try {
+        var savedTheme = localStorage.getItem('theme');
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+          document.documentElement.classList.add('dark');
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+    rel="stylesheet"
+  />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#06b6d4',
+            secondary: '#8b5cf6',
+            'background-light': '#f8fafc',
+            'background-dark': '#0a0a0a',
+          },
+          fontFamily: {
+            display: ['Space Grotesk', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+          },
+          borderRadius: {
+            DEFAULT: '0.75rem',
+          },
+        },
+      },
+    };
+  </script>
+
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
 </head>
-<body class="bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-100 font-body transition-colors duration-300">
-<nav class="fixed top-0 w-full z-50 px-6 py-4">
-<div class="max-w-7xl mx-auto flex justify-between items-center glass rounded-full px-8 py-3 dark:bg-black/40 bg-white/40">
-<div class="text-2xl font-display font-bold text-gradient">DEV.ALO</div>
-<div class="hidden md:flex space-x-8 font-medium">
-<a class="hover:text-primary transition-colors" href="#home" data-es="Inicio" data-en="Home">Inicio</a>
-<a class="hover:text-primary transition-colors" href="#projects" data-es="Proyectos" data-en="Projects">Proyectos</a>
-<a class="hover:text-primary transition-colors" href="#stack" data-es="Stack" data-en="Stack">Stack</a>
-<a class="hover:text-primary transition-colors" href="#about" data-es="Sobre mí" data-en="About">Sobre mí</a>
-<a class="hover:text-primary transition-colors" href="#contact" data-es="Contacto" data-en="Contact">Contacto</a>
-</div>
-<div class="flex items-center gap-4">
-<div class="flex gap-2 bg-slate-200 dark:bg-slate-800 rounded-full p-1">
-<button class="px-3 py-1 rounded-full text-sm font-semibold transition-all language-btn active" data-lang="es">ES</button>
-<button class="px-3 py-1 rounded-full text-sm font-semibold transition-all language-btn" data-lang="en">EN</button>
-</div>
-<button class="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-all" onclick="document.documentElement.classList.toggle('dark')">
-<span class="material-icons text-xl align-middle">dark_mode</span>
-</button>
-</div>
-</div>
-</nav>
-<section class="relative min-h-screen flex items-center pt-20 overflow-hidden" id="home">
-<div class="absolute inset-0 bg-grid opacity-20 pointer-events-none"></div>
-<div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-<div class="order-2 lg:order-1">
-<span class="inline-block px-4 py-1 rounded-full border border-primary text-primary text-sm font-semibold mb-6 animate-pulse" data-es="Disponible para Nuevos Desafíos" data-en="Available for New Challenges">
-                    Disponible para Nuevos Desafíos
-                </span>
-<h1 class="text-6xl md:text-8xl font-display font-extrabold leading-tight mb-6" id="hero-title">
-                    <span data-es="CREANDO" data-en="CRAFTING">CREANDO</span> <span class="text-gradient" data-es="FRONTERAS" data-en="DIGITAL">FRONTERAS</span><br/><span data-es="DIGITALES" data-en="FRONTIERS">DIGITALES</span>
-                </h1>
-<p class="text-xl text-slate-600 dark:text-slate-400 mb-10 max-w-lg leading-relaxed" data-es="Arquitecto Full Stack especializado en construir aplicaciones de alto rendimiento con precisión y estética moderna." data-en="Full Stack Architect specialized in building high-performance applications with precision and modern aesthetics.">
-                    Arquitecto Full Stack especializado en construir aplicaciones y paginas webde alto rendimiento con precisión y estética moderna.
-                </p>
-<div class="flex flex-wrap gap-4">
-<a class="px-8 py-4 bg-primary hover:bg-cyan-500 text-white font-bold rounded-xl transition-all transform hover:-translate-y-1 glow-hover" href="#projects" data-es="Ver Mi Trabajo" data-en="View My Work">
-                        Ver Mi Trabajo
-                    </a>
-<a class="px-8 py-4 border-2 border-slate-300 dark:border-slate-700 hover:border-primary dark:hover:border-primary font-bold rounded-xl transition-all" href="#contact" data-es="Hablemos" data-en="Let's Talk">
-                        Hablemos
-                    </a>
-</div>
-</div>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-body transition-colors duration-300 antialiased">
+  <!-- Skip link for keyboard users -->
+  <a
+    href="#main-content"
+    class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[70] focus:px-4 focus:py-2.5 focus:rounded-xl focus:bg-cyan-700 focus:text-white dark:focus:bg-cyan-400 dark:focus:text-slate-950 focus:font-semibold focus:shadow-lg"
+    data-es="Saltar al contenido principal"
+    data-en="Skip to main content"
+  >
+    Saltar al contenido principal
+  </a>
 
-<div class="order-1 lg:order-2 relative group">
-<div class="absolute -inset-4 bg-gradient-to-tr from-primary to-secondary opacity-30 blur-2xl group-hover:opacity-50 transition-opacity"></div>
-<div class="relative overflow-hidden rounded-[2rem] border-4 border-slate-200 dark:border-slate-800 shadow-2xl">
-<img alt="Full Stack Developer Portrait" class="w-full object-cover grayscale hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105" src="assets/Gemini_Generated_Image_heflaoheflaohefl.png"/>
-</div>
-<div class="absolute -bottom-6 -right-6 glass p-4 rounded-2xl hidden md:block">
-<div class="flex items-center gap-3">
-<div class="w-3 h-3 rounded-full bg-green-500"></div>
-<span class="font-mono text-sm" data-es="Sistema: En línea" data-en="System: Online">Sistema: En línea</span>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- About section (placed below Stack) -->
-<section class="py-24 bg-slate-50 dark:bg-slate-900/10" id="about">
-    <div class="max-w-7xl mx-auto px-6">
-        <div class="max-w-3xl mx-auto text-center">
-            <h2 class="text-4xl font-display font-bold mb-4" data-es="Sobre mí" data-en="About Me">Sobre mí</h2>
-            <p class="text-slate-600 dark:text-slate-400 mb-6" data-es="Mi nombre es Alejandro Barros, soy de Buenos Aires, Argentina. Soy un apasionado por la programación y actualmente estudio la Licenciatura en Informática en la Universidad Nacional de Quilmes. Siempre estoy buscando nuevos desafíos para mejorar tanto como persona como programador." data-en="My name is Alejandro Barros, I'm from Buenos Aires, Argentina. I'm passionate about programming and currently studying Computer Science at the National University of Quilmes. I am always seeking new challenges to grow both as a person and as a developer.">Mi nombre es Alejandro Barros, soy de Buenos Aires, Argentina. Soy un apasionado por la programación y actualmente estudio la Licenciatura en Informática en la Universidad Nacional de Quilmes. Siempre estoy buscando nuevos desafíos para mejorar tanto como persona como programador.</p>
-            <p class="text-slate-600 dark:text-slate-400 mb-6" data-es="Me especializo en desarrollo Full Stack con énfasis en construir experiencias de usuario limpias, rendimiento y arquitectura escalable. Disfruto resolver problemas complejos, optimizar procesos y aprender nuevas tecnologías para entregar soluciones reales que aporten valor a los clientes." data-en="I specialize in Full Stack development with an emphasis on building clean user experiences, performance and scalable architecture. I enjoy solving complex problems, optimizing workflows and learning new technologies to deliver real solutions that add value to clients.">Me especializo en desarrollo Full Stack con énfasis en construir experiencias de usuario limpias, rendimiento y arquitectura escalable. Disfruto resolver problemas complejos, optimizar procesos y aprender nuevas tecnologías para entregar soluciones reales que aporten valor a los clientes.</p>
+  <!-- Navbar -->
+  <header class="fixed top-0 inset-x-0 z-40 px-4 sm:px-6 py-3 sm:py-4">
+    <nav
+      class="max-w-7xl mx-auto relative"
+      aria-label="Navegación principal"
+      data-aria-es="Navegación principal"
+      data-aria-en="Main navigation"
+    >
+      <div class="flex justify-between items-center glass rounded-full px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3">
+        <a href="#home" class="text-xl sm:text-2xl font-display font-bold text-gradient shrink-0">
+          DEV.ALO
+        </a>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                <div class="p-6 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800">
-                    <h4 class="text-sm font-semibold mb-2" data-es="Fortalezas" data-en="Strengths">Fortalezas</h4>
-                    <ul class="text-sm text-slate-600 dark:text-slate-400 space-y-2 text-left">
-                        <li>Resolución de problemas y pensamiento analítico</li>
-                        <li>Trabajo en equipo y comunicación efectiva</li>
-                        <li>Aprendizaje continuo y adaptación rápida</li>
-                        <li>Atención al detalle y calidad de código</li>
-                        <li>Gestión del tiempo y cumplimiento de plazos</li>
-                        <li>Implementacion de inteligencia artifical</li>
-                    </ul>
-                </div>
-                <div class="p-6 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 flex flex-col justify-center items-center">
-                    
-                    <div class="w-full rounded-lg overflow-hidden border border-slate-200 dark:border-slate-800">
-                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&auto=format&fit=crop&q=80" alt="Persona programando vista desde atrás" class="w-full h-56 object-cover"/>
-                    </div>
-                </div>
+        <div class="hidden md:flex items-center gap-1 lg:gap-2 font-medium text-sm lg:text-base">
+          <a
+            class="nav-link px-3 py-1.5 rounded-full text-slate-700 dark:text-slate-200 hover:text-cyan-700 dark:hover:text-cyan-400 transition-colors"
+            href="#home"
+            data-section="home"
+            data-es="Inicio"
+            data-en="Home"
+          >
+            Inicio
+          </a>
+          <a
+            class="nav-link px-3 py-1.5 rounded-full text-slate-700 dark:text-slate-200 hover:text-cyan-700 dark:hover:text-cyan-400 transition-colors"
+            href="#projects"
+            data-section="projects"
+            data-es="Proyectos"
+            data-en="Projects"
+          >
+            Proyectos
+          </a>
+          <a
+            class="nav-link px-3 py-1.5 rounded-full text-slate-700 dark:text-slate-200 hover:text-cyan-700 dark:hover:text-cyan-400 transition-colors"
+            href="#stack"
+            data-section="stack"
+            data-es="Stack"
+            data-en="Stack"
+          >
+            Stack
+          </a>
+          <a
+            class="nav-link px-3 py-1.5 rounded-full text-slate-700 dark:text-slate-200 hover:text-cyan-700 dark:hover:text-cyan-400 transition-colors"
+            href="#about"
+            data-section="about"
+            data-es="Sobre mí"
+            data-en="About"
+          >
+            Sobre mí
+          </a>
+          <a
+            class="nav-link px-3 py-1.5 rounded-full text-slate-700 dark:text-slate-200 hover:text-cyan-700 dark:hover:text-cyan-400 transition-colors"
+            href="#contact"
+            data-section="contact"
+            data-es="Contacto"
+            data-en="Contact"
+          >
+            Contacto
+          </a>
+        </div>
+
+        <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+          <div
+            class="flex gap-1 bg-slate-200/80 dark:bg-slate-800 rounded-full p-1"
+            role="group"
+            aria-label="Selector de idioma"
+            data-aria-es="Selector de idioma"
+            data-aria-en="Language selector"
+          >
+            <button
+              type="button"
+              class="px-2.5 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-semibold transition-all language-btn active"
+              data-lang="es"
+              aria-pressed="true"
+            >
+              ES
+            </button>
+            <button
+              type="button"
+              class="px-2.5 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-semibold transition-all language-btn"
+              data-lang="en"
+              aria-pressed="false"
+            >
+              EN
+            </button>
+          </div>
+
+          <button
+            id="theme-toggle"
+            type="button"
+            class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-slate-200/80 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 transition-colors"
+            aria-label="Cambiar a modo oscuro"
+            aria-pressed="false"
+          >
+            <span id="theme-icon" class="material-icons text-xl" aria-hidden="true">dark_mode</span>
+          </button>
+
+          <button
+            id="mobile-menu-toggle"
+            type="button"
+            class="md:hidden w-10 h-10 flex items-center justify-center rounded-full hover:bg-slate-200/80 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 transition-colors"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+            aria-label="Abrir menú de navegación"
+            data-aria-es="Abrir menú de navegación"
+            data-aria-en="Open navigation menu"
+          >
+            <span id="mobile-menu-icon" class="material-icons text-2xl" aria-hidden="true">menu</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation Panel -->
+      <div id="mobile-menu" class="hidden md:hidden mt-3 glass rounded-3xl p-4 shadow-xl">
+        <div class="flex flex-col space-y-1">
+          <a
+            class="nav-link block px-4 py-3 rounded-xl text-base font-medium text-slate-800 dark:text-slate-100 hover:bg-slate-200/60 dark:hover:bg-slate-800/70 transition-colors"
+            href="#home"
+            data-section="home"
+            data-es="Inicio"
+            data-en="Home"
+          >
+            Inicio
+          </a>
+          <a
+            class="nav-link block px-4 py-3 rounded-xl text-base font-medium text-slate-800 dark:text-slate-100 hover:bg-slate-200/60 dark:hover:bg-slate-800/70 transition-colors"
+            href="#projects"
+            data-section="projects"
+            data-es="Proyectos"
+            data-en="Projects"
+          >
+            Proyectos
+          </a>
+          <a
+            class="nav-link block px-4 py-3 rounded-xl text-base font-medium text-slate-800 dark:text-slate-100 hover:bg-slate-200/60 dark:hover:bg-slate-800/70 transition-colors"
+            href="#stack"
+            data-section="stack"
+            data-es="Stack"
+            data-en="Stack"
+          >
+            Stack
+          </a>
+          <a
+            class="nav-link block px-4 py-3 rounded-xl text-base font-medium text-slate-800 dark:text-slate-100 hover:bg-slate-200/60 dark:hover:bg-slate-800/70 transition-colors"
+            href="#about"
+            data-section="about"
+            data-es="Sobre mí"
+            data-en="About"
+          >
+            Sobre mí
+          </a>
+          <a
+            class="nav-link block px-4 py-3 rounded-xl text-base font-medium text-slate-800 dark:text-slate-100 hover:bg-slate-200/60 dark:hover:bg-slate-800/70 transition-colors"
+            href="#contact"
+            data-section="contact"
+            data-es="Contacto"
+            data-en="Contact"
+          >
+            Contacto
+          </a>
+        </div>
+
+        <div class="mt-3 pt-3 border-t border-slate-200 dark:border-slate-800 flex items-center gap-3 px-2">
+          <a
+            href="https://github.com/alobarros8"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 px-3 py-2 rounded-xl text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-cyan-700 dark:hover:text-cyan-400 transition-colors"
+          >
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.69-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.05 11.05 0 0 1 5.79 0c2.21-1.49 3.18-1.18 3.18-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.09 0 4.42-2.69 5.39-5.26 5.68.41.36.78 1.06.78 2.14 0 1.55-.01 2.79-.01 3.17 0 .31.21.68.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z" />
+            </svg>
+            <span>GitHub</span>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/alejandro-barros-57933a257/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 px-3 py-2 rounded-xl text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-cyan-700 dark:hover:text-cyan-400 transition-colors"
+          >
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
+            </svg>
+            <span>LinkedIn</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <!-- 1. Hero Section -->
+    <section
+      id="home"
+      class="relative min-h-screen flex items-center pt-28 pb-16 sm:pt-32 sm:pb-20 overflow-hidden scroll-mt-24"
+    >
+      <div class="absolute inset-0 bg-grid opacity-60 dark:opacity-45 pointer-events-none" aria-hidden="true"></div>
+
+      <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center relative z-10 w-full">
+        <!-- Hero Text (First on mobile for above-the-fold clarity) -->
+        <div class="lg:col-span-7 order-1">
+          <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-cyan-700/25 dark:border-cyan-400/30 bg-cyan-50 dark:bg-cyan-950/60 text-cyan-800 dark:text-cyan-300 text-sm font-semibold mb-6">
+            <span class="relative flex h-2.5 w-2.5" aria-hidden="true">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+            </span>
+            <span data-es="Disponible para nuevos proyectos" data-en="Available for new projects">
+              Disponible para nuevos proyectos
+            </span>
+          </div>
+
+          <p
+            class="text-base sm:text-lg font-semibold tracking-wide text-slate-600 dark:text-slate-300 mb-3"
+            data-es="Alejandro Barros · Full Stack Developer"
+            data-en="Alejandro Barros · Full Stack Developer"
+          >
+            Alejandro Barros · Full Stack Developer
+          </p>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-display font-extrabold tracking-tight leading-[1.1] mb-6" id="hero-title">
+            <span data-es="Construyo productos web" data-en="Building fast, scalable">Construyo productos web</span>
+            <span class="text-gradient" data-es="rápidos y escalables" data-en="web products">rápidos y escalables</span>
+          </h1>
+
+          <p
+            class="text-lg sm:text-xl text-slate-600 dark:text-slate-300 mb-8 max-w-2xl leading-relaxed"
+            data-es="Desarrollador Full Stack en Buenos Aires especializado en Next.js, React, TypeScript y Supabase. Diseño e implemento aplicaciones SaaS, e-commerce y herramientas interactivas listas para producción."
+            data-en="Full Stack Developer from Buenos Aires specializing in Next.js, React, TypeScript, and Supabase. I design and build production-ready SaaS platforms, e-commerce stores, and interactive web tools."
+          >
+            Desarrollador Full Stack en Buenos Aires especializado en Next.js, React, TypeScript y Supabase. Diseño e implemento aplicaciones SaaS, e-commerce y herramientas interactivas listas para producción.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4 mb-8">
+            <a
+              href="#projects"
+              class="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-cyan-700 hover:bg-cyan-800 text-white dark:bg-cyan-400 dark:hover:bg-cyan-300 dark:text-slate-950 font-bold rounded-xl transition-all transform hover:-translate-y-0.5 glow-hover"
+            >
+              <span data-es="Ver Proyectos" data-en="View Projects">Ver Proyectos</span>
+              <span class="material-icons text-lg" aria-hidden="true">arrow_downward</span>
+            </a>
+
+            <a
+              href="#contact"
+              class="inline-flex items-center justify-center gap-2 px-7 py-3.5 border-2 border-slate-300 dark:border-slate-700 hover:border-cyan-700 dark:hover:border-cyan-400 text-slate-800 dark:text-slate-100 font-bold rounded-xl transition-all"
+              data-es="Hablemos"
+              data-en="Let's Talk"
+            >
+              Hablemos
+            </a>
+          </div>
+
+          <!-- Quick access links + trust summary -->
+          <div class="flex flex-wrap items-center gap-x-5 gap-y-3 pt-4 border-t border-slate-200/80 dark:border-slate-800/80">
+            <div class="flex items-center gap-3">
+              <a
+                href="https://github.com/alobarros8"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-sm font-semibold text-slate-700 dark:text-slate-200 hover:border-cyan-700 dark:hover:border-cyan-400 hover:text-cyan-700 dark:hover:text-cyan-400 transition-colors"
+              >
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.69-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.05 11.05 0 0 1 5.79 0c2.21-1.49 3.18-1.18 3.18-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.09 0 4.42-2.69 5.39-5.26 5.68.41.36.78 1.06.78 2.14 0 1.55-.01 2.79-.01 3.17 0 .31.21.68.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z" />
+                </svg>
+                <span>GitHub</span>
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/alejandro-barros-57933a257/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-sm font-semibold text-slate-700 dark:text-slate-200 hover:border-cyan-700 dark:hover:border-cyan-400 hover:text-cyan-700 dark:hover:text-cyan-400 transition-colors"
+              >
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
+                </svg>
+                <span>LinkedIn</span>
+              </a>
             </div>
 
-           
+            <span
+              class="text-sm font-medium text-slate-600 dark:text-slate-400"
+              data-es="4 apps en producción · Next.js &amp; Supabase · Buenos Aires, AR"
+              data-en="4 apps in production · Next.js &amp; Supabase · Buenos Aires, AR"
+            >
+              4 apps en producción · Next.js &amp; Supabase · Buenos Aires, AR
+            </span>
+          </div>
         </div>
-    </div>
-</section>
-<section class="py-24 bg-white dark:bg-black/20" id="projects">
-<div class="max-w-7xl mx-auto px-6">
-<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-<div>
-<h2 class="text-4xl md:text-5xl font-display font-bold mb-4" data-es="Trabajos Destacados" data-en="Selected Works">Trabajos Destacados</h2>
-<p class="text-slate-500 dark:text-slate-400 max-w-md" data-es="Explorando la intersección entre arquitectura backend compleja y experiencias de usuario fluidas." data-en="Exploring the intersection of complex backend architecture and seamless user experiences.">Explorando la intersección entre arquitectura backend compleja y experiencias de usuario fluidas.</p>
-</div>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-<div class="group relative bg-slate-100 dark:bg-slate-900 rounded-3xl overflow-hidden hover:shadow-2xl transition-all w-full cursor-pointer flex flex-col" onclick="openProjectModal('appcontabilidad')">
-<div class="h-64 overflow-hidden">
-<img alt="App Contabilidad - Dashboard" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" src="assets/Apps/AppContabilidad%20dashboard.png"/>
-</div>
-<div class="p-8 flex-1 flex flex-col">
-<div class="flex flex-wrap gap-2 mb-4">
-<span class="text-xs font-bold uppercase tracking-widest text-primary">Next.js</span>
-<span class="text-xs font-bold uppercase tracking-widest text-secondary">Supabase</span>
-</div>
-<h3 class="text-2xl font-bold mb-3" data-es="App Contabilidad" data-en="Accounting App">App Contabilidad</h3>
-<p class="text-slate-500 dark:text-slate-400 mb-6 text-sm" data-es="Sistema integral de gestión contable para pequeños negocios con dashboard intuitivo, gestión de productos y registro de ventas en tiempo real." data-en="Comprehensive accounting management system for small businesses with intuitive dashboard, product management and real-time sales records.">Sistema integral de gestión contable para pequeños negocios con dashboard intuitivo, gestión de productos y registro de ventas en tiempo real.</p>
-<a class="inline-flex items-center text-primary font-bold group-hover:gap-2 transition-all mt-auto" href="javascript:void(0)" onclick="event.stopPropagation(); openProjectModal('appcontabilidad'); return false;">
-<span data-es="Ver Proyecto" data-en="View Project">Ver Proyecto</span> <span class="material-icons text-sm ml-1">arrow_forward</span>
-</a>
-</div>
-</div>
 
-<div class="group relative bg-slate-100 dark:bg-slate-900 rounded-3xl overflow-hidden hover:shadow-2xl transition-all w-full cursor-pointer flex flex-col" onclick="openProjectModal('alda')">
-<div class="h-64 overflow-hidden">
-<img alt="ALDA - Tienda Online" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" src="assets/Apps/AldaHome.png"/>
-</div>
-<div class="p-8 flex-1 flex flex-col">
-<div class="flex flex-wrap gap-2 mb-4">
-<span class="text-xs font-bold uppercase tracking-widest text-primary">Next.js</span>
-<span class="text-xs font-bold uppercase tracking-widest text-secondary">Supabase</span>
-<span class="text-xs font-bold uppercase tracking-widest text-primary">TypeScript</span>
-</div>
-<h3 class="text-2xl font-bold mb-3" data-es="ALDA · Tienda Online" data-en="ALDA · E-Commerce Store">ALDA · Tienda Online</h3>
-<p class="text-slate-500 dark:text-slate-400 mb-6 text-sm" data-es="E-commerce completo de mates, librería y bazar con catálogo filtrable, precios diferenciados por medio de pago, personalización de productos y checkout coordinado por WhatsApp." data-en="Full-featured e-commerce store for mate gear, stationery, and home goods with filterable catalog, multi-tier payment pricing, product customization, and WhatsApp checkout.">E-commerce completo de mates, librería y bazar con catálogo filtrable, precios diferenciados por medio de pago, personalización de productos y checkout coordinado por WhatsApp.</p>
-<a class="inline-flex items-center text-primary font-bold group-hover:gap-2 transition-all mt-auto" href="javascript:void(0)" onclick="event.stopPropagation(); openProjectModal('alda'); return false;">
-<span data-es="Ver Proyecto" data-en="View Project">Ver Proyecto</span> <span class="material-icons text-sm ml-1">arrow_forward</span>
-</a>
-</div>
-</div>
+        <!-- Hero Portrait -->
+        <div class="lg:col-span-5 order-2 relative group max-w-md mx-auto lg:max-w-none w-full">
+          <div
+            class="absolute -inset-3 bg-gradient-to-tr from-cyan-500/30 to-violet-500/30 opacity-60 blur-2xl group-hover:opacity-80 transition-opacity rounded-[2rem]"
+            aria-hidden="true"
+          ></div>
+          <div class="relative overflow-hidden rounded-[2rem] border-2 border-slate-200 dark:border-slate-800 shadow-2xl bg-slate-200 dark:bg-slate-900">
+            <img
+              src="assets/alejandro-barros-portrait.webp"
+              alt="Retrato de Alejandro Barros, Desarrollador Full Stack"
+              width="864"
+              height="746"
+              fetchpriority="high"
+              decoding="async"
+              class="w-full max-h-[340px] sm:max-h-[400px] lg:max-h-none object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]"
+            />
+          </div>
 
-<div class="group relative bg-slate-100 dark:bg-slate-900 rounded-3xl overflow-hidden hover:shadow-2xl transition-all w-full cursor-pointer flex flex-col" onclick="openProjectModal('tiendafacil')">
-<div class="h-64 overflow-hidden">
-<img alt="Tienda Fácil - Armador de Tiendas Online" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" src="assets/Apps/TiendaFacilHero.png"/>
-</div>
-<div class="p-8 flex-1 flex flex-col">
-<div class="flex flex-wrap gap-2 mb-4">
-<span class="text-xs font-bold uppercase tracking-widest text-primary">Next.js</span>
-<span class="text-xs font-bold uppercase tracking-widest text-secondary">Supabase</span>
-<span class="text-xs font-bold uppercase tracking-widest text-primary">SaaS</span>
-</div>
-<h3 class="text-2xl font-bold mb-3" data-es="Tienda Fácil · Armador de Tiendas" data-en="Tienda Fácil · Online Store Builder">Tienda Fácil · Armador de Tiendas</h3>
-<p class="text-slate-500 dark:text-slate-400 mb-6 text-sm" data-es="Plataforma SaaS multi-tenant para crear tiendas online en minutos con plantillas personalizables, catálogo con variantes y pedidos estructurados directo a WhatsApp sin comisiones." data-en="Multi-tenant SaaS platform to launch online stores in minutes with customizable templates, variant catalogs, and structured WhatsApp orders with zero sales commissions.">Plataforma SaaS multi-tenant para crear tiendas online en minutos con plantillas personalizables, catálogo con variantes y pedidos estructurados directo a WhatsApp sin comisiones.</p>
-<a class="inline-flex items-center text-primary font-bold group-hover:gap-2 transition-all mt-auto" href="javascript:void(0)" onclick="event.stopPropagation(); openProjectModal('tiendafacil'); return false;">
-<span data-es="Ver Proyecto" data-en="View Project">Ver Proyecto</span> <span class="material-icons text-sm ml-1">arrow_forward</span>
-</a>
-</div>
-</div>
+          <div class="absolute -bottom-4 right-4 sm:right-6 glass px-4 py-2.5 rounded-2xl">
+            <div class="flex items-center gap-2.5">
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-500" aria-hidden="true"></span>
+              <span
+                class="font-mono text-xs sm:text-sm font-medium text-slate-800 dark:text-slate-100"
+                data-es="Buenos Aires · GMT-3"
+                data-en="Buenos Aires · GMT-3"
+              >
+                Buenos Aires · GMT-3
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<div class="group relative bg-slate-100 dark:bg-slate-900 rounded-3xl overflow-hidden hover:shadow-2xl transition-all w-full cursor-pointer flex flex-col" onclick="openProjectModal('armadorpc')">
-<div class="h-64 overflow-hidden">
-<img alt="Armador de PC - Configurador" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" src="assets/Apps/ArmadorPCBuilder.png"/>
-</div>
-<div class="p-8 flex-1 flex flex-col">
-<div class="flex flex-wrap gap-2 mb-4">
-<span class="text-xs font-bold uppercase tracking-widest text-primary">React</span>
-<span class="text-xs font-bold uppercase tracking-widest text-secondary">TypeScript</span>
-<span class="text-xs font-bold uppercase tracking-widest text-primary">Vite</span>
-</div>
-<h3 class="text-2xl font-bold mb-3" data-es="Armador de PC" data-en="PC Builder &amp; Optimizer">Armador de PC</h3>
-<p class="text-slate-500 dark:text-slate-400 mb-6 text-sm" data-es="Configurador interactivo de PCs con más de 1.200 componentes, motor de compatibilidad en tiempo real, optimizador por presupuesto con beam search y builds compartibles por URL." data-en="Interactive PC configurator with 1,200+ components, real-time compatibility engine, beam-search budget optimizer, and stateless shareable URL builds.">Configurador interactivo de PCs con más de 1.200 componentes, motor de compatibilidad en tiempo real, optimizador por presupuesto con beam search y builds compartibles por URL.</p>
-<a class="inline-flex items-center text-primary font-bold group-hover:gap-2 transition-all mt-auto" href="javascript:void(0)" onclick="event.stopPropagation(); openProjectModal('armadorpc'); return false;">
-<span data-es="Ver Proyecto" data-en="View Project">Ver Proyecto</span> <span class="material-icons text-sm ml-1">arrow_forward</span>
-</a>
-</div>
-</div>
-</div>
-</div>
-</section>
+    <!-- 2. Projects Section -->
+    <section id="projects" class="py-20 sm:py-24 bg-white dark:bg-black/20 scroll-mt-24">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 sm:mb-16 gap-6 reveal">
+          <div>
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-bold mb-4" data-es="Trabajos Destacados" data-en="Selected Works">
+              Trabajos Destacados
+            </h2>
+            <p
+              class="text-slate-600 dark:text-slate-300 max-w-xl text-base sm:text-lg"
+              data-es="Aplicaciones reales en producción que combinan arquitectura backend sólida y experiencias de usuario fluidas."
+              data-en="Production-ready applications combining solid backend architecture with fluid user experiences."
+            >
+              Aplicaciones reales en producción que combinan arquitectura backend sólida y experiencias de usuario fluidas.
+            </p>
+          </div>
+        </div>
 
-<!-- Modal dinámico de proyectos -->
-<div id="projectModal" class="fixed inset-0 bg-black/50 z-50 hidden flex items-center justify-center p-4" onclick="closeProjectModal(event)">
-<div id="projectModalContent" class="bg-white dark:bg-slate-900 rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto glass" onclick="event.stopPropagation()">
-<!-- Header del Modal -->
-<div class="sticky top-0 z-10 bg-white/80 dark:bg-slate-900/80 backdrop-blur-lg border-b border-slate-200 dark:border-slate-800 p-8 flex justify-between items-center">
-<div>
-<h2 id="modalProjectTitle" class="text-3xl font-display font-bold mb-2">App Contabilidad</h2>
-<div id="modalProjectBadges" class="flex flex-wrap gap-2">
-<span class="text-xs font-bold uppercase tracking-widest text-primary">Next.js</span>
-<span class="text-xs font-bold uppercase tracking-widest text-secondary">Supabase</span>
-</div>
-</div>
-<button class="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors" onclick="closeProjectModal()">
-<span class="material-icons text-3xl">close</span>
-</button>
-</div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Card 1: App Contabilidad -->
+          <article class="reveal group relative bg-slate-50 dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-200/90 dark:border-slate-800 hover:border-cyan-600/40 dark:hover:border-cyan-400/40 hover:shadow-2xl transition-all flex flex-col">
+            <button
+              type="button"
+              data-open-project="appcontabilidad"
+              class="block w-full text-left overflow-hidden focus:outline-none cursor-pointer"
+              aria-label="Ver detalles de App Contabilidad"
+              data-aria-es="Ver detalles de App Contabilidad"
+              data-aria-en="View details for Accounting App"
+            >
+              <div class="aspect-[16/10] w-full overflow-hidden bg-slate-200 dark:bg-slate-800">
+                <img
+                  src="assets/Apps/app-contabilidad-dashboard.webp"
+                  alt="App Contabilidad - Dashboard"
+                  loading="lazy"
+                  decoding="async"
+                  class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+            </button>
 
-<!-- Contenido del Modal -->
-<div class="p-8 space-y-8">
-<!-- Descripción -->
-<div>
-<h3 class="text-2xl font-bold mb-4" data-es="Descripción del Proyecto" data-en="Project Description">Descripción del Proyecto</h3>
-<p id="modalProjectDescription" class="text-slate-600 dark:text-slate-400 leading-relaxed">App Contabilidad es una solución integral diseñada para facilitar la gestión contable de pequeños negocios. La aplicación proporciona una interfaz moderna e intuitiva que permite a los empresarios administrar sus operaciones financieras de manera eficiente.</p>
-</div>
+            <div class="p-6 sm:p-8 flex-1 flex flex-col">
+              <div class="flex flex-wrap items-center gap-2 mb-4">
+                <span
+                  class="px-2.5 py-1 rounded-full text-xs font-semibold bg-slate-200/80 dark:bg-slate-800 text-slate-700 dark:text-slate-200"
+                  data-es="Gestión Comercial"
+                  data-en="Business Management"
+                >
+                  Gestión Comercial
+                </span>
+                <span class="px-2.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-cyan-50 dark:bg-cyan-950/60 text-cyan-700 dark:text-cyan-400">
+                  Next.js
+                </span>
+                <span class="px-2.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-violet-50 dark:bg-violet-950/60 text-violet-700 dark:text-violet-400">
+                  Supabase
+                </span>
+              </div>
 
-<!-- Problema que soluciona -->
-<div>
-<h3 class="text-2xl font-bold mb-4" data-es="Problema que Soluciona" data-en="Problem It Solves">Problema que Soluciona</h3>
-<ul id="modalProjectProblems" class="space-y-3 text-slate-600 dark:text-slate-400">
-</ul>
-</div>
+              <h3 class="text-2xl font-display font-bold mb-3 text-slate-900 dark:text-white" data-es="App Contabilidad" data-en="Accounting App">
+                App Contabilidad
+              </h3>
 
-<!-- Galería de imágenes -->
-<div>
-<h3 class="text-2xl font-bold mb-6" data-es="Galería del Proyecto" data-en="Project Gallery">Galería del Proyecto</h3>
-<div id="modalProjectGallery" class="grid grid-cols-1 md:grid-cols-3 gap-6">
-</div>
-</div>
+              <p
+                class="text-slate-600 dark:text-slate-300 mb-6 text-sm sm:text-base leading-relaxed"
+                data-es="Sistema integral de gestión contable para pequeños negocios con dashboard intuitivo, gestión de productos y registro de ventas en tiempo real."
+                data-en="Comprehensive accounting management system for small businesses with intuitive dashboard, product management and real-time sales records."
+              >
+                Sistema integral de gestión contable para pequeños negocios con dashboard intuitivo, gestión de productos y registro de ventas en tiempo real.
+              </p>
 
-<!-- Características técnicas -->
-<div>
-<h3 class="text-2xl font-bold mb-4" data-es="Características Técnicas" data-en="Technical Features">Características Técnicas</h3>
-<div id="modalProjectTech" class="grid grid-cols-2 md:grid-cols-3 gap-4">
-</div>
-</div>
+              <div class="mt-auto pt-4 border-t border-slate-200/80 dark:border-slate-800 flex flex-wrap items-center justify-between gap-3">
+                <button
+                  type="button"
+                  data-open-project="appcontabilidad"
+                  class="inline-flex items-center gap-1.5 font-bold text-cyan-700 dark:text-cyan-400 hover:text-cyan-900 dark:hover:text-cyan-300 transition-colors cursor-pointer"
+                >
+                  <span data-es="Ver detalle" data-en="View case study">Ver detalle</span>
+                  <span class="material-icons text-base transition-transform group-hover:translate-x-0.5" aria-hidden="true">arrow_forward</span>
+                </button>
 
-<!-- Call to Action -->
-<div id="modalProjectActions" class="flex flex-col sm:flex-row gap-4 pt-6 border-t border-slate-200 dark:border-slate-800">
-</div>
-</div>
-</div>
-</div>
+                <a
+                  href="https://app-contabilidad-de-nogecio.vercel.app/login"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:border-cyan-700 dark:hover:border-cyan-400 hover:text-cyan-700 dark:hover:text-cyan-400 transition-colors"
+                  aria-label="Abrir demo en vivo de App Contabilidad (se abre en una pestaña nueva)"
+                  data-aria-es="Abrir demo en vivo de App Contabilidad (se abre en una pestaña nueva)"
+                  data-aria-en="Open live demo for Accounting App (opens in a new tab)"
+                >
+                  <span data-es="Demo en vivo" data-en="Live demo">Demo en vivo</span>
+                  <span class="material-icons text-sm" aria-hidden="true">open_in_new</span>
+                </a>
+              </div>
+            </div>
+          </article>
 
-<!-- Modal para imagen fullscreen -->
-<div id="fullscreenImageModal" class="fixed inset-0 bg-black/90 z-50 hidden flex items-center justify-center p-4" onclick="closeFullscreenImage(event)">
-<button class="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors" onclick="closeFullscreenImage()">
-<span class="material-icons text-4xl">close</span>
-</button>
-<img id="fullscreenImage" src="" alt="Fullscreen" class="max-w-full max-h-full object-contain" onclick="event.stopPropagation()"/>
-</div>
-<section class="py-24 relative overflow-hidden" id="stack">
-<div class="max-w-7xl mx-auto px-6">
-<div class="text-center mb-16">
-<h2 class="text-4xl font-display font-bold mb-4" data-es="El Stack Tecnológico" data-en="The Tech Stack">El Stack Tecnológico</h2>
-<p class="text-slate-500 dark:text-slate-400" data-es="Dominando las herramientas de la web moderna" data-en="Mastering the tools of the modern web">Dominando las herramientas de la web moderna</p>
-</div>
-<div class="flex flex-wrap justify-center gap-6">
-<div class="px-8 py-4 bg-slate-100 dark:bg-slate-900 border-b-4 border-primary rounded-2xl flex items-center gap-3 transition-transform hover:-translate-y-2">
-<span class="material-icons text-primary">code</span>
-<span class="font-bold">TypeScript</span>
-</div>
-<div class="px-8 py-4 bg-slate-100 dark:bg-slate-900 border-b-4 border-primary rounded-2xl flex items-center gap-3 transition-transform hover:-translate-y-2">
-<span class="material-icons text-primary">code</span>
-<span class="font-bold">JavaScript</span>
-</div>
-<div class="px-8 py-4 bg-slate-100 dark:bg-slate-900 border-b-4 border-secondary rounded-2xl flex items-center gap-3 transition-transform hover:-translate-y-2">
-<span class="material-icons text-secondary">dynamic_feed</span>
-<span class="font-bold">React / Next.js</span>
-</div>
-<div class="px-8 py-4 bg-slate-100 dark:bg-slate-900 border-b-4 border-primary rounded-2xl flex items-center gap-3 transition-transform hover:-translate-y-2">
-<span class="material-icons text-primary">dns</span>
-<span class="font-bold">Supabase</span>
-</div>
-<div class="px-8 py-4 bg-slate-100 dark:bg-slate-900 border-b-4 border-secondary rounded-2xl flex items-center gap-3 transition-transform hover:-translate-y-2">
-<span class="material-icons text-secondary">storage</span>
-<span class="font-bold">PostgreSQL</span>
-</div>
+          <!-- Card 2: ALDA -->
+          <article class="reveal group relative bg-slate-50 dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-200/90 dark:border-slate-800 hover:border-cyan-600/40 dark:hover:border-cyan-400/40 hover:shadow-2xl transition-all flex flex-col">
+            <button
+              type="button"
+              data-open-project="alda"
+              class="block w-full text-left overflow-hidden focus:outline-none cursor-pointer"
+              aria-label="Ver detalles de ALDA Tienda Online"
+              data-aria-es="Ver detalles de ALDA Tienda Online"
+              data-aria-en="View details for ALDA E-Commerce Store"
+            >
+              <div class="aspect-[16/10] w-full overflow-hidden bg-slate-200 dark:bg-slate-800">
+                <img
+                  src="assets/Apps/alda-home.webp"
+                  alt="ALDA - Tienda Online"
+                  loading="lazy"
+                  decoding="async"
+                  class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+            </button>
 
-<div class="px-8 py-4 bg-slate-100 dark:bg-slate-900 border-b-4 border-secondary rounded-2xl flex items-center gap-3 transition-transform hover:-translate-y-2">
-<span class="material-icons text-secondary">terminal</span>
-<span class="font-bold">GraphQL</span>
-</div>
-<div class="px-8 py-4 bg-slate-100 dark:bg-slate-900 border-b-4 border-primary rounded-2xl flex items-center gap-3 transition-transform hover:-translate-y-2">
-<span class="material-icons text-primary">layers</span>
-<span class="font-bold">Tailwind CSS</span>
-</div>
-<div class="px-8 py-4 bg-slate-100 dark:bg-slate-900 border-b-4 border-primary rounded-2xl flex items-center gap-3 transition-transform hover:-translate-y-2">
-<span class="material-icons text-primary">layers</span>
-<span class="font-bold">Boostrap CSS</span>
-</div>
-<div class="px-8 py-4 bg-slate-100 dark:bg-slate-900 border-b-4 border-primary rounded-2xl flex items-center gap-3 transition-transform hover:-translate-y-2">
-<span class="material-icons text-primary">group</span>
-<span class="font-bold">DevOps</span>
-</div>
-<div class="px-8 py-4 bg-slate-100 dark:bg-slate-900 border-b-4 border-primary rounded-2xl flex items-center gap-3 transition-transform hover:-translate-y-2">
-<span class="material-icons text-primary">star</span>
-<span class="font-bold">IA</span>
-</div>
-</div>
-</div>
-</section>
+            <div class="p-6 sm:p-8 flex-1 flex flex-col">
+              <div class="flex flex-wrap items-center gap-2 mb-4">
+                <span
+                  class="px-2.5 py-1 rounded-full text-xs font-semibold bg-slate-200/80 dark:bg-slate-800 text-slate-700 dark:text-slate-200"
+                  data-es="E-Commerce"
+                  data-en="E-Commerce"
+                >
+                  E-Commerce
+                </span>
+                <span class="px-2.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-cyan-50 dark:bg-cyan-950/60 text-cyan-700 dark:text-cyan-400">
+                  Next.js
+                </span>
+                <span class="px-2.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-violet-50 dark:bg-violet-950/60 text-violet-700 dark:text-violet-400">
+                  Supabase
+                </span>
+                <span class="px-2.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-cyan-50 dark:bg-cyan-950/60 text-cyan-700 dark:text-cyan-400">
+                  TypeScript
+                </span>
+              </div>
 
+              <h3 class="text-2xl font-display font-bold mb-3 text-slate-900 dark:text-white" data-es="ALDA · Tienda Online" data-en="ALDA · E-Commerce Store">
+                ALDA · Tienda Online
+              </h3>
 
+              <p
+                class="text-slate-600 dark:text-slate-300 mb-6 text-sm sm:text-base leading-relaxed"
+                data-es="E-commerce completo de mates, librería y bazar con catálogo filtrable, precios diferenciados por medio de pago, personalización de productos y checkout coordinado por WhatsApp."
+                data-en="Full-featured e-commerce store for mate gear, stationery, and home goods with filterable catalog, multi-tier payment pricing, product customization, and WhatsApp checkout."
+              >
+                E-commerce completo de mates, librería y bazar con catálogo filtrable, precios diferenciados por medio de pago, personalización de productos y checkout coordinado por WhatsApp.
+              </p>
 
-<section class="py-24 bg-slate-50 dark:bg-slate-900/40" id="contact">
-<div class="max-w-4xl mx-auto px-6">
-<div class="glass p-12 rounded-[3rem] relative overflow-hidden">
-<div class="absolute top-0 right-0 p-8 text-slate-200 dark:text-slate-800 pointer-events-none">
-<span class="material-icons text-[120px] rotate-12 opacity-50">send</span>
-</div>
-<h2 class="text-4xl font-display font-bold mb-8" data-es="¿Listo para Construir Algo Increíble?" data-en="Ready to Build Something Incredible?">¿Listo para Construir Algo Increíble?</h2>
-<form id="contact-form" class="space-y-6">
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-<div>
-<label for="contact-name" class="block text-sm font-semibold mb-2 ml-1" data-es="Nombre" data-en="Name">Nombre</label>
-<input id="contact-name" name="name" class="w-full bg-white dark:bg-black/40 border-slate-200 dark:border-slate-800 focus:ring-primary focus:border-primary rounded-xl px-4 py-3 outline-none transition-all" placeholder="Juan Pérez" type="text"/>
-</div>
-<div>
-<label for="contact-email" class="block text-sm font-semibold mb-2 ml-1" data-es="Correo Electrónico" data-en="Email">Correo Electrónico</label>
-<input id="contact-email" name="email" class="w-full bg-white dark:bg-black/40 border-slate-200 dark:border-slate-800 focus:ring-primary focus:border-primary rounded-xl px-4 py-3 outline-none transition-all" placeholder="juan@ejemplo.com" type="email"/>
-</div>
-</div>
-</div>
-<div>
-<label for="contact-message" class="block text-sm font-semibold mb-2 ml-1" data-es="Mensaje" data-en="Message">Mensaje</label>
-<textarea id="contact-message" name="message" class="w-full bg-white dark:bg-black/40 border-slate-200 dark:border-slate-800 focus:ring-primary focus:border-primary rounded-xl px-4 py-3 outline-none transition-all" placeholder="Cuéntame sobre tu proyecto..." rows="4"></textarea>
-</div>
-<div id="contact-feedback" class="text-sm mt-2"></div>
-<button id="contact-submit" class="w-full py-4 bg-primary hover:bg-cyan-500 text-white font-bold rounded-xl transition-all shadow-lg shadow-cyan-500/20" type="submit" data-es="Enviar Mensaje" data-en="Send Message">
-                        Enviar Mensaje
+              <div class="mt-auto pt-4 border-t border-slate-200/80 dark:border-slate-800 flex flex-wrap items-center justify-between gap-3">
+                <button
+                  type="button"
+                  data-open-project="alda"
+                  class="inline-flex items-center gap-1.5 font-bold text-cyan-700 dark:text-cyan-400 hover:text-cyan-900 dark:hover:text-cyan-300 transition-colors cursor-pointer"
+                >
+                  <span data-es="Ver detalle" data-en="View case study">Ver detalle</span>
+                  <span class="material-icons text-base transition-transform group-hover:translate-x-0.5" aria-hidden="true">arrow_forward</span>
+                </button>
+
+                <a
+                  href="https://alda-bay.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:border-cyan-700 dark:hover:border-cyan-400 hover:text-cyan-700 dark:hover:text-cyan-400 transition-colors"
+                  aria-label="Abrir demo en vivo de ALDA (se abre en una pestaña nueva)"
+                  data-aria-es="Abrir demo en vivo de ALDA (se abre en una pestaña nueva)"
+                  data-aria-en="Open live demo for ALDA (opens in a new tab)"
+                >
+                  <span data-es="Demo en vivo" data-en="Live demo">Demo en vivo</span>
+                  <span class="material-icons text-sm" aria-hidden="true">open_in_new</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3: Tienda Fácil -->
+          <article class="reveal group relative bg-slate-50 dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-200/90 dark:border-slate-800 hover:border-cyan-600/40 dark:hover:border-cyan-400/40 hover:shadow-2xl transition-all flex flex-col">
+            <button
+              type="button"
+              data-open-project="tiendafacil"
+              class="block w-full text-left overflow-hidden focus:outline-none cursor-pointer"
+              aria-label="Ver detalles de Tienda Fácil"
+              data-aria-es="Ver detalles de Tienda Fácil"
+              data-aria-en="View details for Tienda Fácil"
+            >
+              <div class="aspect-[16/10] w-full overflow-hidden bg-slate-200 dark:bg-slate-800">
+                <img
+                  src="assets/Apps/tienda-facil-hero.webp"
+                  alt="Tienda Fácil - Armador de Tiendas Online"
+                  loading="lazy"
+                  decoding="async"
+                  class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+            </button>
+
+            <div class="p-6 sm:p-8 flex-1 flex flex-col">
+              <div class="flex flex-wrap items-center gap-2 mb-4">
+                <span
+                  class="px-2.5 py-1 rounded-full text-xs font-semibold bg-slate-200/80 dark:bg-slate-800 text-slate-700 dark:text-slate-200"
+                  data-es="SaaS Multi-Tenant"
+                  data-en="Multi-Tenant SaaS"
+                >
+                  SaaS Multi-Tenant
+                </span>
+                <span class="px-2.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-cyan-50 dark:bg-cyan-950/60 text-cyan-700 dark:text-cyan-400">
+                  Next.js
+                </span>
+                <span class="px-2.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-violet-50 dark:bg-violet-950/60 text-violet-700 dark:text-violet-400">
+                  Supabase
+                </span>
+                <span class="px-2.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-cyan-50 dark:bg-cyan-950/60 text-cyan-700 dark:text-cyan-400">
+                  SaaS
+                </span>
+              </div>
+
+              <h3 class="text-2xl font-display font-bold mb-3 text-slate-900 dark:text-white" data-es="Tienda Fácil · Armador de Tiendas" data-en="Tienda Fácil · Online Store Builder">
+                Tienda Fácil · Armador de Tiendas
+              </h3>
+
+              <p
+                class="text-slate-600 dark:text-slate-300 mb-6 text-sm sm:text-base leading-relaxed"
+                data-es="Plataforma SaaS multi-tenant para crear tiendas online en minutos con plantillas personalizables, catálogo con variantes y pedidos estructurados directo a WhatsApp sin comisiones."
+                data-en="Multi-tenant SaaS platform to launch online stores in minutes with customizable templates, variant catalogs, and structured WhatsApp orders with zero sales commissions."
+              >
+                Plataforma SaaS multi-tenant para crear tiendas online en minutos con plantillas personalizables, catálogo con variantes y pedidos estructurados directo a WhatsApp sin comisiones.
+              </p>
+
+              <div class="mt-auto pt-4 border-t border-slate-200/80 dark:border-slate-800 flex flex-wrap items-center justify-between gap-3">
+                <button
+                  type="button"
+                  data-open-project="tiendafacil"
+                  class="inline-flex items-center gap-1.5 font-bold text-cyan-700 dark:text-cyan-400 hover:text-cyan-900 dark:hover:text-cyan-300 transition-colors cursor-pointer"
+                >
+                  <span data-es="Ver detalle" data-en="View case study">Ver detalle</span>
+                  <span class="material-icons text-base transition-transform group-hover:translate-x-0.5" aria-hidden="true">arrow_forward</span>
+                </button>
+
+                <a
+                  href="https://tienda-facil-alpha.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:border-cyan-700 dark:hover:border-cyan-400 hover:text-cyan-700 dark:hover:text-cyan-400 transition-colors"
+                  aria-label="Abrir demo en vivo de Tienda Fácil (se abre en una pestaña nueva)"
+                  data-aria-es="Abrir demo en vivo de Tienda Fácil (se abre en una pestaña nueva)"
+                  data-aria-en="Open live demo for Tienda Fácil (opens in a new tab)"
+                >
+                  <span data-es="Demo en vivo" data-en="Live demo">Demo en vivo</span>
+                  <span class="material-icons text-sm" aria-hidden="true">open_in_new</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4: Armador de PC -->
+          <article class="reveal group relative bg-slate-50 dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-200/90 dark:border-slate-800 hover:border-cyan-600/40 dark:hover:border-cyan-400/40 hover:shadow-2xl transition-all flex flex-col">
+            <button
+              type="button"
+              data-open-project="armadorpc"
+              class="block w-full text-left overflow-hidden focus:outline-none cursor-pointer"
+              aria-label="Ver detalles de Armador de PC"
+              data-aria-es="Ver detalles de Armador de PC"
+              data-aria-en="View details for PC Builder &amp; Optimizer"
+            >
+              <div class="aspect-[16/10] w-full overflow-hidden bg-slate-200 dark:bg-slate-800">
+                <img
+                  src="assets/Apps/armador-pc-builder.webp"
+                  alt="Armador de PC - Configurador"
+                  loading="lazy"
+                  decoding="async"
+                  class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+            </button>
+
+            <div class="p-6 sm:p-8 flex-1 flex flex-col">
+              <div class="flex flex-wrap items-center gap-2 mb-4">
+                <span
+                  class="px-2.5 py-1 rounded-full text-xs font-semibold bg-slate-200/80 dark:bg-slate-800 text-slate-700 dark:text-slate-200"
+                  data-es="Herramienta Interactiva"
+                  data-en="Interactive Web Tool"
+                >
+                  Herramienta Interactiva
+                </span>
+                <span class="px-2.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-cyan-50 dark:bg-cyan-950/60 text-cyan-700 dark:text-cyan-400">
+                  React
+                </span>
+                <span class="px-2.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-violet-50 dark:bg-violet-950/60 text-violet-700 dark:text-violet-400">
+                  TypeScript
+                </span>
+                <span class="px-2.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-cyan-50 dark:bg-cyan-950/60 text-cyan-700 dark:text-cyan-400">
+                  Vite
+                </span>
+              </div>
+
+              <h3 class="text-2xl font-display font-bold mb-3 text-slate-900 dark:text-white" data-es="Armador de PC" data-en="PC Builder &amp; Optimizer">
+                Armador de PC
+              </h3>
+
+              <p
+                class="text-slate-600 dark:text-slate-300 mb-6 text-sm sm:text-base leading-relaxed"
+                data-es="Configurador interactivo de PCs con más de 1.200 componentes, motor de compatibilidad en tiempo real, optimizador por presupuesto con beam search y builds compartibles por URL."
+                data-en="Interactive PC configurator with 1,200+ components, real-time compatibility engine, beam-search budget optimizer, and stateless shareable URL builds."
+              >
+                Configurador interactivo de PCs con más de 1.200 componentes, motor de compatibilidad en tiempo real, optimizador por presupuesto con beam search y builds compartibles por URL.
+              </p>
+
+              <div class="mt-auto pt-4 border-t border-slate-200/80 dark:border-slate-800 flex flex-wrap items-center justify-between gap-3">
+                <button
+                  type="button"
+                  data-open-project="armadorpc"
+                  class="inline-flex items-center gap-1.5 font-bold text-cyan-700 dark:text-cyan-400 hover:text-cyan-900 dark:hover:text-cyan-300 transition-colors cursor-pointer"
+                >
+                  <span data-es="Ver detalle" data-en="View case study">Ver detalle</span>
+                  <span class="material-icons text-base transition-transform group-hover:translate-x-0.5" aria-hidden="true">arrow_forward</span>
+                </button>
+
+                <div class="flex items-center gap-2">
+                  <a
+                    href="https://github.com/alobarros8/armador-de-pc"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-semibold bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:border-cyan-700 dark:hover:border-cyan-400 hover:text-cyan-700 dark:hover:text-cyan-400 transition-colors"
+                    aria-label="Ver repositorio de Armador de PC en GitHub (se abre en una pestaña nueva)"
+                    data-aria-es="Ver repositorio de Armador de PC en GitHub (se abre en una pestaña nueva)"
+                    data-aria-en="View PC Builder repository on GitHub (opens in a new tab)"
+                  >
+                    <span>GitHub</span>
+                    <span class="material-icons text-sm" aria-hidden="true">code</span>
+                  </a>
+                  <a
+                    href="https://armador-de-pc.vercel.app/?b=eyJ2IjoxLCJiIjoyNTAwMDAwLCJzIjp7ImNwdSI6WyJjZy0yMTE4MiJdLCJjb29sZXIiOlsiYW50ZWMtYTM1Il0sIm1vdGhlcmJvYXJkIjpbIm1zaS1iNTUwbS1hLXBybyJdLCJyYW0iOlsiZGRyNC0zMi0zMjAwLWtpdCJdLCJncHUiOlsiYXJjLWI1ODAiXSwic3RvcmFnZSI6WyJudm1lLTF0YiJdLCJwc3UiOlsiYXNyb2NrLTc1MC1nb2xkIl0sImNhc2UiOlsiYXN1cy1hMjEiXX19"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:border-cyan-700 dark:hover:border-cyan-400 hover:text-cyan-700 dark:hover:text-cyan-400 transition-colors"
+                    aria-label="Abrir demo en vivo de Armador de PC (se abre en una pestaña nueva)"
+                    data-aria-es="Abrir demo en vivo de Armador de PC (se abre en una pestaña nueva)"
+                    data-aria-en="Open live demo for PC Builder (opens in a new tab)"
+                  >
+                    <span data-es="Demo en vivo" data-en="Live demo">Demo en vivo</span>
+                    <span class="material-icons text-sm" aria-hidden="true">open_in_new</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Tech Stack Section -->
+    <section id="stack" class="py-20 sm:py-24 relative overflow-hidden scroll-mt-24">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-12 sm:mb-16 reveal">
+          <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4" data-es="El Stack Tecnológico" data-en="The Tech Stack">
+            El Stack Tecnológico
+          </h2>
+          <p
+            class="text-slate-600 dark:text-slate-300 max-w-xl mx-auto"
+            data-es="Tecnologías probadas que utilizo en producción en mis proyectos"
+            data-en="Battle-tested technologies I use in production across my projects"
+          >
+            Tecnologías probadas que utilizo en producción en mis proyectos
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+          <!-- Frontend & UI -->
+          <div class="reveal p-6 sm:p-8 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl shadow-sm">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-11 h-11 rounded-2xl bg-cyan-50 dark:bg-cyan-950/70 text-cyan-700 dark:text-cyan-400 flex items-center justify-center">
+                <span class="material-icons" aria-hidden="true">web</span>
+              </div>
+              <h3 class="text-xl font-display font-bold text-slate-900 dark:text-white" data-es="Frontend &amp; UI" data-en="Frontend &amp; UI">
+                Frontend &amp; UI
+              </h3>
+            </div>
+            <div class="flex flex-wrap gap-2.5">
+              <span class="px-3.5 py-2 rounded-xl text-sm font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-100 border border-slate-200/80 dark:border-slate-700">TypeScript</span>
+              <span class="px-3.5 py-2 rounded-xl text-sm font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-100 border border-slate-200/80 dark:border-slate-700">JavaScript</span>
+              <span class="px-3.5 py-2 rounded-xl text-sm font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-100 border border-slate-200/80 dark:border-slate-700">React 19</span>
+              <span class="px-3.5 py-2 rounded-xl text-sm font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-100 border border-slate-200/80 dark:border-slate-700">Next.js</span>
+              <span class="px-3.5 py-2 rounded-xl text-sm font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-100 border border-slate-200/80 dark:border-slate-700">Tailwind CSS</span>
+              <span class="px-3.5 py-2 rounded-xl text-sm font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-100 border border-slate-200/80 dark:border-slate-700">Vite</span>
+              <span class="px-3.5 py-2 rounded-xl text-sm font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-100 border border-slate-200/80 dark:border-slate-700">Zustand</span>
+              <span class="px-3.5 py-2 rounded-xl text-sm font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-100 border border-slate-200/80 dark:border-slate-700">Radix UI</span>
+            </div>
+          </div>
+
+          <!-- Backend & Data -->
+          <div class="reveal p-6 sm:p-8 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl shadow-sm">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-11 h-11 rounded-2xl bg-violet-50 dark:bg-violet-950/70 text-violet-700 dark:text-violet-400 flex items-center justify-center">
+                <span class="material-icons" aria-hidden="true">dns</span>
+              </div>
+              <h3 class="text-xl font-display font-bold text-slate-900 dark:text-white" data-es="Backend &amp; Datos" data-en="Backend &amp; Data">
+                Backend &amp; Datos
+              </h3>
+            </div>
+            <div class="flex flex-wrap gap-2.5">
+              <span class="px-3.5 py-2 rounded-xl text-sm font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-100 border border-slate-200/80 dark:border-slate-700">Supabase</span>
+              <span class="px-3.5 py-2 rounded-xl text-sm font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-100 border border-slate-200/80 dark:border-slate-700">PostgreSQL &amp; RLS</span>
+              <span class="px-3.5 py-2 rounded-xl text-sm font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-100 border border-slate-200/80 dark:border-slate-700">SQL / RPCs</span>
+              <span class="px-3.5 py-2 rounded-xl text-sm font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-100 border border-slate-200/80 dark:border-slate-700">Zod</span>
+            </div>
+          </div>
+
+          <!-- Workflow, Quality & AI -->
+          <div class="reveal p-6 sm:p-8 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl shadow-sm">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-11 h-11 rounded-2xl bg-cyan-50 dark:bg-cyan-950/70 text-cyan-700 dark:text-cyan-400 flex items-center justify-center">
+                <span class="material-icons" aria-hidden="true">auto_awesome</span>
+              </div>
+              <h3 class="text-xl font-display font-bold text-slate-900 dark:text-white" data-es="Workflow, Calidad &amp; IA" data-en="Workflow, Quality &amp; AI">
+                Workflow, Calidad &amp; IA
+              </h3>
+            </div>
+            <div class="flex flex-wrap gap-2.5">
+              <span class="px-3.5 py-2 rounded-xl text-sm font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-100 border border-slate-200/80 dark:border-slate-700">Git &amp; GitHub Actions</span>
+              <span class="px-3.5 py-2 rounded-xl text-sm font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-100 border border-slate-200/80 dark:border-slate-700">Vercel</span>
+              <span class="px-3.5 py-2 rounded-xl text-sm font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-100 border border-slate-200/80 dark:border-slate-700">Vitest</span>
+              <span
+                class="px-3.5 py-2 rounded-xl text-sm font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-100 border border-slate-200/80 dark:border-slate-700"
+                data-es="Integración de IA"
+                data-en="AI Integration"
+              >
+                Integración de IA
+              </span>
+              <span class="px-3.5 py-2 rounded-xl text-sm font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-100 border border-slate-200/80 dark:border-slate-700">DevOps &amp; CI/CD</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. About Section -->
+    <section id="about" class="py-20 sm:py-24 bg-slate-100/70 dark:bg-slate-900/20 scroll-mt-24">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+          <!-- Bio & Real Data Cards -->
+          <div class="lg:col-span-7 reveal">
+            <h2 class="text-3xl sm:text-4xl font-display font-bold mb-6" data-es="Sobre mí" data-en="About Me">
+              Sobre mí
+            </h2>
+
+            <div class="space-y-4 text-slate-600 dark:text-slate-300 text-base sm:text-lg leading-relaxed mb-8">
+              <p
+                data-es="Mi nombre es Alejandro Barros, soy de Buenos Aires, Argentina. Soy un apasionado por la programación y actualmente estudio la Licenciatura en Informática en la Universidad Nacional de Quilmes. Siempre estoy buscando nuevos desafíos para crecer tanto como profesional como desarrollador."
+                data-en="My name is Alejandro Barros, I'm from Buenos Aires, Argentina. I'm passionate about programming and currently studying Computer Science at the National University of Quilmes (UNQ). I am always seeking new challenges to grow both personally and as an engineer."
+              >
+                Mi nombre es Alejandro Barros, soy de Buenos Aires, Argentina. Soy un apasionado por la programación y actualmente estudio la Licenciatura en Informática en la Universidad Nacional de Quilmes. Siempre estoy buscando nuevos desafíos para crecer tanto como profesional como desarrollador.
+              </p>
+              <p
+                data-es="Me especializo en desarrollo Full Stack con foco en construir experiencias de usuario limpias, rendimiento y arquitectura escalable. Disfruto resolver problemas complejos, optimizar flujos de trabajo y convertir ideas en productos digitales reales que aporten valor."
+                data-en="I specialize in Full Stack development with an emphasis on clean user experiences, performance, and scalable architecture. I enjoy solving complex problems, optimizing workflows, and turning ideas into real digital products that create value."
+              >
+                Me especializo en desarrollo Full Stack con foco en construir experiencias de usuario limpias, rendimiento y arquitectura escalable. Disfruto resolver problemas complejos, optimizar flujos de trabajo y convertir ideas en productos digitales reales que aporten valor.
+              </p>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4">
+              <div class="p-5 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
+                <div class="flex items-center gap-2 text-cyan-700 dark:text-cyan-400 mb-2">
+                  <span class="material-icons text-xl" aria-hidden="true">rocket_launch</span>
+                  <span class="text-xl font-display font-bold">4+</span>
+                </div>
+                <p class="text-sm font-medium text-slate-600 dark:text-slate-300" data-es="Apps en producción" data-en="Apps in production">
+                  Apps en producción
+                </p>
+              </div>
+
+              <div class="p-5 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
+                <div class="flex items-center gap-2 text-violet-700 dark:text-violet-400 mb-2">
+                  <span class="material-icons text-xl" aria-hidden="true">school</span>
+                  <span class="text-xl font-display font-bold">UNQ</span>
+                </div>
+                <p class="text-sm font-medium text-slate-600 dark:text-slate-300" data-es="Lic. en Informática" data-en="B.S. in Computer Science">
+                  Lic. en Informática
+                </p>
+              </div>
+
+              <div class="p-5 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
+                <div class="flex items-center gap-2 text-cyan-700 dark:text-cyan-400 mb-2">
+                  <span class="material-icons text-xl" aria-hidden="true">layers</span>
+                  <span class="text-xl font-display font-bold">Full Stack</span>
+                </div>
+                <p class="text-sm font-medium text-slate-600 dark:text-slate-300" data-es="Next.js &amp; Supabase" data-en="Next.js &amp; Supabase">
+                  Next.js &amp; Supabase
+                </p>
+              </div>
+
+              <div class="p-5 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
+                <div class="flex items-center gap-2 text-violet-700 dark:text-violet-400 mb-2">
+                  <span class="material-icons text-xl" aria-hidden="true">public</span>
+                  <span class="text-xl font-display font-bold">Buenos Aires</span>
+                </div>
+                <p class="text-sm font-medium text-slate-600 dark:text-slate-300" data-es="Argentina · GMT-3" data-en="Argentina · GMT-3">
+                  Argentina · GMT-3
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Strengths Card -->
+          <div class="lg:col-span-5 reveal">
+            <div class="p-6 sm:p-8 bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm">
+              <h3 class="text-xl font-display font-bold mb-6 text-slate-900 dark:text-white" data-es="Fortalezas" data-en="Strengths">
+                Fortalezas
+              </h3>
+              <ul class="space-y-4 text-sm sm:text-base text-slate-600 dark:text-slate-300">
+                <li class="flex items-start gap-3">
+                  <span class="material-icons text-cyan-700 dark:text-cyan-400 text-xl shrink-0 mt-0.5" aria-hidden="true">check_circle</span>
+                  <span data-es="Resolución de problemas y pensamiento analítico" data-en="Problem-solving and analytical thinking">
+                    Resolución de problemas y pensamiento analítico
+                  </span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="material-icons text-cyan-700 dark:text-cyan-400 text-xl shrink-0 mt-0.5" aria-hidden="true">check_circle</span>
+                  <span data-es="Trabajo en equipo y comunicación efectiva" data-en="Teamwork and clear communication">
+                    Trabajo en equipo y comunicación efectiva
+                  </span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="material-icons text-cyan-700 dark:text-cyan-400 text-xl shrink-0 mt-0.5" aria-hidden="true">check_circle</span>
+                  <span data-es="Aprendizaje continuo y adaptación rápida" data-en="Continuous learning and rapid adaptation">
+                    Aprendizaje continuo y adaptación rápida
+                  </span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="material-icons text-cyan-700 dark:text-cyan-400 text-xl shrink-0 mt-0.5" aria-hidden="true">check_circle</span>
+                  <span data-es="Atención al detalle y calidad de código" data-en="Attention to detail and code quality">
+                    Atención al detalle y calidad de código
+                  </span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="material-icons text-cyan-700 dark:text-cyan-400 text-xl shrink-0 mt-0.5" aria-hidden="true">check_circle</span>
+                  <span data-es="Gestión del tiempo y cumplimiento de plazos" data-en="Time management and reliable delivery">
+                    Gestión del tiempo y cumplimiento de plazos
+                  </span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="material-icons text-cyan-700 dark:text-cyan-400 text-xl shrink-0 mt-0.5" aria-hidden="true">check_circle</span>
+                  <span data-es="Implementación de inteligencia artificial" data-en="AI integration in real workflows">
+                    Implementación de inteligencia artificial
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Contact Section -->
+    <section id="contact" class="py-20 sm:py-24 bg-white dark:bg-black/20 scroll-mt-24">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="glass p-6 sm:p-10 lg:p-12 rounded-[2rem] sm:rounded-[3rem] relative overflow-hidden reveal">
+          <div class="absolute top-0 right-0 p-8 text-slate-300/40 dark:text-slate-800/60 pointer-events-none" aria-hidden="true">
+            <span class="material-icons text-[120px] rotate-12 opacity-60">send</span>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 relative z-10">
+            <!-- Left Column: Direct Channels -->
+            <div class="lg:col-span-5 flex flex-col justify-between gap-8">
+              <div>
+                <h2
+                  class="text-3xl sm:text-4xl font-display font-bold mb-4 text-slate-900 dark:text-white"
+                  data-es="¿Listo para construir algo increíble?"
+                  data-en="Ready to build something great?"
+                >
+                  ¿Listo para construir algo increíble?
+                </h2>
+                <p
+                  class="text-slate-600 dark:text-slate-300 leading-relaxed"
+                  data-es="Si buscás sumar un desarrollador Full Stack a tu equipo o necesitás llevar un producto digital a producción, escribime por acá o por correo directo."
+                  data-en="If you are looking for a Full Stack developer for your team or want to ship a web product to production, send a message or reach out directly."
+                >
+                  Si buscás sumar un desarrollador Full Stack a tu equipo o necesitás llevar un producto digital a producción, escribime por acá o por correo directo.
+                </p>
+              </div>
+
+              <div class="space-y-4">
+                <div class="p-4 rounded-2xl bg-white/90 dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800">
+                  <p class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-1" data-es="Correo directo" data-en="Direct email">
+                    Correo directo
+                  </p>
+                  <div class="flex flex-wrap items-center justify-between gap-3">
+                    <a
+                      href="mailto:alobarros8@gmail.com"
+                      class="font-mono text-sm font-semibold text-slate-800 dark:text-slate-100 hover:text-cyan-700 dark:hover:text-cyan-400 transition-colors break-all"
+                    >
+                      alobarros8@gmail.com
+                    </a>
+                    <button
+                      id="copy-email-btn"
+                      type="button"
+                      class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-cyan-50 dark:bg-cyan-950/70 text-cyan-700 dark:text-cyan-300 hover:bg-cyan-100 dark:hover:bg-cyan-900/80 transition-colors cursor-pointer"
+                      aria-label="Copiar correo al portapapeles"
+                      data-aria-es="Copiar correo al portapapeles"
+                      data-aria-en="Copy email to clipboard"
+                    >
+                      <span id="copy-email-icon" class="material-icons text-sm" aria-hidden="true">content_copy</span>
+                      <span id="copy-email-text" data-es="Copiar email" data-en="Copy email">Copiar email</span>
                     </button>
-</form>
-</div>
-</div>
-</section>
-<footer class="py-12 border-t border-slate-200 dark:border-slate-800">
-<div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
-<div class="text-2xl font-display font-bold text-gradient">DEV.ALO</div>
-<div class="flex gap-6">
-<a class="hover:text-primary transition-colors" href="https://github.com/alobarros8">GitHub</a>
-<a class="hover:text-primary transition-colors" href="https://www.linkedin.com/in/alejandro-barros-57933a257/">LinkedIn</a>
+                  </div>
+                </div>
 
-</div>
-<p class="text-slate-500 text-sm" data-es="© 2024 DevAlo. Todos los derechos reservados." data-en="© 2026 DevAlo. All rights reserved.">© 2026 DevAlo. Todos los derechos reservados.</p>
-</div>
-</footer>
+                <div class="flex flex-wrap gap-3">
+                  <a
+                    href="https://www.linkedin.com/in/alejandro-barros-57933a257/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="flex-1 min-w-[140px] inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-white/90 dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 text-sm font-semibold text-slate-700 dark:text-slate-200 hover:border-cyan-700 dark:hover:border-cyan-400 hover:text-cyan-700 dark:hover:text-cyan-400 transition-colors"
+                  >
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
+                    </svg>
+                    <span>LinkedIn</span>
+                  </a>
 
-<script src="assets/js/main.js" defer></script>
+                  <a
+                    href="https://github.com/alobarros8"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="flex-1 min-w-[140px] inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-white/90 dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 text-sm font-semibold text-slate-700 dark:text-slate-200 hover:border-cyan-700 dark:hover:border-cyan-400 hover:text-cyan-700 dark:hover:text-cyan-400 transition-colors"
+                  >
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.69-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.05 11.05 0 0 1 5.79 0c2.21-1.49 3.18-1.18 3.18-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.09 0 4.42-2.69 5.39-5.26 5.68.41.36.78 1.06.78 2.14 0 1.55-.01 2.79-.01 3.17 0 .31.21.68.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z" />
+                    </svg>
+                    <span>GitHub</span>
+                  </a>
+                </div>
 
+                <p
+                  class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 flex items-center gap-2"
+                  data-es="Buenos Aires, Argentina (GMT-3) · Respuesta habitual en &lt; 24 h"
+                  data-en="Buenos Aires, Argentina (GMT-3) · Typical reply within 24 h"
+                >
+                  Buenos Aires, Argentina (GMT-3) · Respuesta habitual en &lt; 24 h
+                </p>
+              </div>
+            </div>
+
+            <!-- Right Column: Validated Contact Form -->
+            <div class="lg:col-span-7">
+              <form id="contact-form" class="space-y-5" novalidate>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                  <div>
+                    <label for="contact-name" class="block text-sm font-semibold mb-2 ml-1 text-slate-800 dark:text-slate-200" data-es="Nombre" data-en="Name">
+                      Nombre
+                    </label>
+                    <input
+                      id="contact-name"
+                      name="name"
+                      type="text"
+                      required
+                      autocomplete="name"
+                      class="w-full bg-white dark:bg-slate-950/70 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:ring-cyan-600 focus:border-cyan-600 dark:focus:ring-cyan-400 dark:focus:border-cyan-400 rounded-xl px-4 py-3 outline-none transition-all"
+                      placeholder="Juan Pérez"
+                      data-placeholder-es="Juan Pérez"
+                      data-placeholder-en="Jane Doe"
+                    />
+                  </div>
+
+                  <div>
+                    <label for="contact-email" class="block text-sm font-semibold mb-2 ml-1 text-slate-800 dark:text-slate-200" data-es="Correo Electrónico" data-en="Email">
+                      Correo Electrónico
+                    </label>
+                    <input
+                      id="contact-email"
+                      name="email"
+                      type="email"
+                      required
+                      autocomplete="email"
+                      class="w-full bg-white dark:bg-slate-950/70 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:ring-cyan-600 focus:border-cyan-600 dark:focus:ring-cyan-400 dark:focus:border-cyan-400 rounded-xl px-4 py-3 outline-none transition-all"
+                      placeholder="juan@ejemplo.com"
+                      data-placeholder-es="juan@ejemplo.com"
+                      data-placeholder-en="jane@example.com"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label for="contact-message" class="block text-sm font-semibold mb-2 ml-1 text-slate-800 dark:text-slate-200" data-es="Mensaje" data-en="Message">
+                    Mensaje
+                  </label>
+                  <textarea
+                    id="contact-message"
+                    name="message"
+                    rows="4"
+                    required
+                    minlength="10"
+                    class="w-full bg-white dark:bg-slate-950/70 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:ring-cyan-600 focus:border-cyan-600 dark:focus:ring-cyan-400 dark:focus:border-cyan-400 rounded-xl px-4 py-3 outline-none transition-all"
+                    placeholder="Cuéntame sobre tu proyecto, objetivos y plazos..."
+                    data-placeholder-es="Cuéntame sobre tu proyecto, objetivos y plazos..."
+                    data-placeholder-en="Tell me about your project, goals, and timeline..."
+                  ></textarea>
+                </div>
+
+                <div id="contact-feedback" role="status" aria-live="polite" class="text-sm font-medium"></div>
+
+                <button
+                  id="contact-submit"
+                  type="submit"
+                  class="w-full py-4 px-6 bg-cyan-700 hover:bg-cyan-800 text-white dark:bg-cyan-400 dark:hover:bg-cyan-300 dark:text-slate-950 font-bold rounded-xl transition-all glow-hover flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer"
+                >
+                  <span id="contact-submit-text" data-es="Enviar Mensaje" data-en="Send Message">Enviar Mensaje</span>
+                  <span id="contact-submit-icon" class="material-icons text-lg" aria-hidden="true">send</span>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-12 border-t border-slate-200 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+      <a href="#home" class="text-2xl font-display font-bold text-gradient">DEV.ALO</a>
+
+      <div class="flex flex-wrap items-center justify-center gap-6 text-sm font-medium text-slate-600 dark:text-slate-300">
+        <a
+          class="inline-flex items-center gap-2 hover:text-cyan-700 dark:hover:text-cyan-400 transition-colors"
+          href="https://github.com/alobarros8"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.69-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.05 11.05 0 0 1 5.79 0c2.21-1.49 3.18-1.18 3.18-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.09 0 4.42-2.69 5.39-5.26 5.68.41.36.78 1.06.78 2.14 0 1.55-.01 2.79-.01 3.17 0 .31.21.68.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z" />
+          </svg>
+          <span>GitHub</span>
+        </a>
+
+        <a
+          class="inline-flex items-center gap-2 hover:text-cyan-700 dark:hover:text-cyan-400 transition-colors"
+          href="https://www.linkedin.com/in/alejandro-barros-57933a257/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
+          </svg>
+          <span>LinkedIn</span>
+        </a>
+
+        <a
+          class="inline-flex items-center gap-1 hover:text-cyan-700 dark:hover:text-cyan-400 transition-colors"
+          href="#home"
+        >
+          <span data-es="Volver arriba" data-en="Back to top">Volver arriba</span>
+          <span class="material-icons text-base" aria-hidden="true">arrow_upward</span>
+        </a>
+      </div>
+
+      <p
+        class="text-slate-600 dark:text-slate-400 text-sm text-center"
+        data-es="© 2026 Alejandro Barros (DevAlo). Todos los derechos reservados."
+        data-en="© 2026 Alejandro Barros (DevAlo). All rights reserved."
+      >
+        © 2026 Alejandro Barros (DevAlo). Todos los derechos reservados.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Project Detail Modal -->
+  <div
+    id="projectModal"
+    class="modal-overlay fixed inset-0 bg-slate-950/70 backdrop-blur-sm z-50 hidden items-center justify-center p-3 sm:p-6"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modalProjectTitle"
+    aria-hidden="true"
+  >
+    <div
+      id="projectModalContent"
+      class="modal-panel bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl"
+    >
+      <!-- Modal Header -->
+      <div class="sticky top-0 z-10 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 px-6 sm:px-8 py-5 flex justify-between items-start gap-4">
+        <div>
+          <p id="modalProjectCategory" class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-1"></p>
+          <h2 id="modalProjectTitle" class="text-2xl sm:text-3xl font-display font-bold text-slate-900 dark:text-white mb-2"></h2>
+          <div id="modalProjectBadges" class="flex flex-wrap gap-2"></div>
+        </div>
+        <button
+          id="closeProjectModalBtn"
+          type="button"
+          class="w-10 h-10 shrink-0 rounded-full flex items-center justify-center text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer"
+          aria-label="Cerrar detalle del proyecto"
+          data-aria-es="Cerrar detalle del proyecto"
+          data-aria-en="Close project details"
+        >
+          <span class="material-icons text-2xl" aria-hidden="true">close</span>
+        </button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="p-6 sm:p-8 space-y-8">
+        <!-- Optional access note (e.g. login wall notice) -->
+        <div
+          id="modalProjectNote"
+          class="hidden p-4 rounded-2xl border border-amber-300 dark:border-amber-700/60 bg-amber-50 dark:bg-amber-950/40 text-amber-900 dark:text-amber-200 text-sm flex items-start gap-3"
+        >
+          <span class="material-icons text-amber-600 dark:text-amber-400 shrink-0 mt-0.5" aria-hidden="true">info</span>
+          <p id="modalProjectNoteText"></p>
+        </div>
+
+        <!-- Description -->
+        <div>
+          <h3 class="text-xl font-display font-bold mb-3 text-slate-900 dark:text-white" data-es="Descripción del Proyecto" data-en="Project Description">
+            Descripción del Proyecto
+          </h3>
+          <p id="modalProjectDescription" class="text-slate-600 dark:text-slate-300 leading-relaxed"></p>
+        </div>
+
+        <!-- Problems Solved -->
+        <div>
+          <h3 class="text-xl font-display font-bold mb-3 text-slate-900 dark:text-white" data-es="Problema que Soluciona" data-en="Problem It Solves">
+            Problema que Soluciona
+          </h3>
+          <ul id="modalProjectProblems" class="space-y-3 text-slate-600 dark:text-slate-300"></ul>
+        </div>
+
+        <!-- Gallery -->
+        <div>
+          <h3 class="text-xl font-display font-bold mb-4 text-slate-900 dark:text-white" data-es="Galería del Proyecto" data-en="Project Gallery">
+            Galería del Proyecto
+          </h3>
+          <div id="modalProjectGallery" class="grid grid-cols-1 md:grid-cols-3 gap-5"></div>
+        </div>
+
+        <!-- Technical Features -->
+        <div>
+          <h3 class="text-xl font-display font-bold mb-4 text-slate-900 dark:text-white" data-es="Características Técnicas" data-en="Technical Features">
+            Características Técnicas
+          </h3>
+          <div id="modalProjectTech" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4"></div>
+        </div>
+
+        <!-- Actions -->
+        <div id="modalProjectActions" class="flex flex-col sm:flex-row gap-4 pt-6 border-t border-slate-200 dark:border-slate-800"></div>
+
+        <!-- Project Navigation Bar -->
+        <div class="flex items-center justify-between gap-4 pt-4 border-t border-slate-200 dark:border-slate-800">
+          <button
+            id="prevProjectBtn"
+            type="button"
+            class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
+          >
+            <span class="material-icons text-lg" aria-hidden="true">arrow_back</span>
+            <span data-es="Proyecto anterior" data-en="Previous project">Proyecto anterior</span>
+          </button>
+
+          <button
+            id="nextProjectBtn"
+            type="button"
+            class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
+          >
+            <span data-es="Siguiente proyecto" data-en="Next project">Siguiente proyecto</span>
+            <span class="material-icons text-lg" aria-hidden="true">arrow_forward</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fullscreen Lightbox Modal -->
+  <div
+    id="fullscreenImageModal"
+    class="modal-overlay fixed inset-0 bg-black/95 z-[60] hidden flex-col items-center justify-between p-4 sm:p-8"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="fullscreenCaption"
+    aria-hidden="true"
+  >
+    <div class="w-full max-w-6xl flex items-center justify-between text-white">
+      <span id="fullscreenCounter" class="font-mono text-sm text-white/80">1 / 3</span>
+      <button
+        id="closeFullscreenBtn"
+        type="button"
+        class="w-11 h-11 rounded-full flex items-center justify-center text-white hover:bg-white/10 transition-colors cursor-pointer"
+        aria-label="Cerrar vista ampliada"
+        data-aria-es="Cerrar vista ampliada"
+        data-aria-en="Close fullscreen view"
+      >
+        <span class="material-icons text-3xl" aria-hidden="true">close</span>
+      </button>
+    </div>
+
+    <div class="relative w-full max-w-6xl flex-1 flex items-center justify-center gap-2 sm:gap-4 my-4 min-h-0">
+      <button
+        id="fullscreenPrevBtn"
+        type="button"
+        class="w-11 h-11 shrink-0 rounded-full flex items-center justify-center bg-white/10 hover:bg-white/20 text-white transition-colors cursor-pointer"
+        aria-label="Imagen anterior"
+        data-aria-es="Imagen anterior"
+        data-aria-en="Previous image"
+      >
+        <span class="material-icons text-2xl" aria-hidden="true">chevron_left</span>
+      </button>
+
+      <div class="flex-1 h-full flex items-center justify-center min-w-0">
+        <img
+          id="fullscreenImage"
+          src=""
+          alt=""
+          class="max-w-full max-h-[75vh] object-contain rounded-xl shadow-2xl"
+        />
+      </div>
+
+      <button
+        id="fullscreenNextBtn"
+        type="button"
+        class="w-11 h-11 shrink-0 rounded-full flex items-center justify-center bg-white/10 hover:bg-white/20 text-white transition-colors cursor-pointer"
+        aria-label="Imagen siguiente"
+        data-aria-es="Imagen siguiente"
+        data-aria-en="Next image"
+      >
+        <span class="material-icons text-2xl" aria-hidden="true">chevron_right</span>
+      </button>
+    </div>
+
+    <p id="fullscreenCaption" class="text-white/90 text-sm sm:text-base font-medium text-center"></p>
+  </div>
+
+  <script src="assets/js/main.js" defer></script>
 </body>
 </html>
