@@ -132,19 +132,73 @@
 <p class="text-slate-500 dark:text-slate-400 max-w-md" data-es="Explorando la intersección entre arquitectura backend compleja y experiencias de usuario fluidas." data-en="Exploring the intersection of complex backend architecture and seamless user experiences.">Explorando la intersección entre arquitectura backend compleja y experiencias de usuario fluidas.</p>
 </div>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
-<div class="group relative bg-slate-100 dark:bg-slate-900 rounded-3xl overflow-hidden hover:shadow-2xl transition-all w-full max-w-md cursor-pointer" onclick="openProjectModal('appcontabilidad')">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="group relative bg-slate-100 dark:bg-slate-900 rounded-3xl overflow-hidden hover:shadow-2xl transition-all w-full cursor-pointer flex flex-col" onclick="openProjectModal('appcontabilidad')">
 <div class="h-64 overflow-hidden">
-<img alt="App Contabilidad - Dashboard" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="assets/Apps/AppContabilidad%20dashboard.png"/>
+<img alt="App Contabilidad - Dashboard" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" src="assets/Apps/AppContabilidad%20dashboard.png"/>
 </div>
-<div class="p-8">
-<div class="flex gap-2 mb-4">
+<div class="p-8 flex-1 flex flex-col">
+<div class="flex flex-wrap gap-2 mb-4">
 <span class="text-xs font-bold uppercase tracking-widest text-primary">Next.js</span>
 <span class="text-xs font-bold uppercase tracking-widest text-secondary">Supabase</span>
 </div>
 <h3 class="text-2xl font-bold mb-3" data-es="App Contabilidad" data-en="Accounting App">App Contabilidad</h3>
 <p class="text-slate-500 dark:text-slate-400 mb-6 text-sm" data-es="Sistema integral de gestión contable para pequeños negocios con dashboard intuitivo, gestión de productos y registro de ventas en tiempo real." data-en="Comprehensive accounting management system for small businesses with intuitive dashboard, product management and real-time sales records.">Sistema integral de gestión contable para pequeños negocios con dashboard intuitivo, gestión de productos y registro de ventas en tiempo real.</p>
-<a class="inline-flex items-center text-primary font-bold group-hover:gap-2 transition-all" href="javascript:void(0)" onclick="openProjectModal('appcontabilidad'); return false;">
+<a class="inline-flex items-center text-primary font-bold group-hover:gap-2 transition-all mt-auto" href="javascript:void(0)" onclick="event.stopPropagation(); openProjectModal('appcontabilidad'); return false;">
+<span data-es="Ver Proyecto" data-en="View Project">Ver Proyecto</span> <span class="material-icons text-sm ml-1">arrow_forward</span>
+</a>
+</div>
+</div>
+
+<div class="group relative bg-slate-100 dark:bg-slate-900 rounded-3xl overflow-hidden hover:shadow-2xl transition-all w-full cursor-pointer flex flex-col" onclick="openProjectModal('alda')">
+<div class="h-64 overflow-hidden">
+<img alt="ALDA - Tienda Online" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" src="assets/Apps/AldaHome.png"/>
+</div>
+<div class="p-8 flex-1 flex flex-col">
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="text-xs font-bold uppercase tracking-widest text-primary">Next.js</span>
+<span class="text-xs font-bold uppercase tracking-widest text-secondary">Supabase</span>
+<span class="text-xs font-bold uppercase tracking-widest text-primary">TypeScript</span>
+</div>
+<h3 class="text-2xl font-bold mb-3" data-es="ALDA · Tienda Online" data-en="ALDA · E-Commerce Store">ALDA · Tienda Online</h3>
+<p class="text-slate-500 dark:text-slate-400 mb-6 text-sm" data-es="E-commerce completo de mates, librería y bazar con catálogo filtrable, precios diferenciados por medio de pago, personalización de productos y checkout coordinado por WhatsApp." data-en="Full-featured e-commerce store for mate gear, stationery, and home goods with filterable catalog, multi-tier payment pricing, product customization, and WhatsApp checkout.">E-commerce completo de mates, librería y bazar con catálogo filtrable, precios diferenciados por medio de pago, personalización de productos y checkout coordinado por WhatsApp.</p>
+<a class="inline-flex items-center text-primary font-bold group-hover:gap-2 transition-all mt-auto" href="javascript:void(0)" onclick="event.stopPropagation(); openProjectModal('alda'); return false;">
+<span data-es="Ver Proyecto" data-en="View Project">Ver Proyecto</span> <span class="material-icons text-sm ml-1">arrow_forward</span>
+</a>
+</div>
+</div>
+
+<div class="group relative bg-slate-100 dark:bg-slate-900 rounded-3xl overflow-hidden hover:shadow-2xl transition-all w-full cursor-pointer flex flex-col" onclick="openProjectModal('tiendafacil')">
+<div class="h-64 overflow-hidden">
+<img alt="Tienda Fácil - Armador de Tiendas Online" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" src="assets/Apps/TiendaFacilHero.png"/>
+</div>
+<div class="p-8 flex-1 flex flex-col">
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="text-xs font-bold uppercase tracking-widest text-primary">Next.js</span>
+<span class="text-xs font-bold uppercase tracking-widest text-secondary">Supabase</span>
+<span class="text-xs font-bold uppercase tracking-widest text-primary">SaaS</span>
+</div>
+<h3 class="text-2xl font-bold mb-3" data-es="Tienda Fácil · Armador de Tiendas" data-en="Tienda Fácil · Online Store Builder">Tienda Fácil · Armador de Tiendas</h3>
+<p class="text-slate-500 dark:text-slate-400 mb-6 text-sm" data-es="Plataforma SaaS multi-tenant para crear tiendas online en minutos con plantillas personalizables, catálogo con variantes y pedidos estructurados directo a WhatsApp sin comisiones." data-en="Multi-tenant SaaS platform to launch online stores in minutes with customizable templates, variant catalogs, and structured WhatsApp orders with zero sales commissions.">Plataforma SaaS multi-tenant para crear tiendas online en minutos con plantillas personalizables, catálogo con variantes y pedidos estructurados directo a WhatsApp sin comisiones.</p>
+<a class="inline-flex items-center text-primary font-bold group-hover:gap-2 transition-all mt-auto" href="javascript:void(0)" onclick="event.stopPropagation(); openProjectModal('tiendafacil'); return false;">
+<span data-es="Ver Proyecto" data-en="View Project">Ver Proyecto</span> <span class="material-icons text-sm ml-1">arrow_forward</span>
+</a>
+</div>
+</div>
+
+<div class="group relative bg-slate-100 dark:bg-slate-900 rounded-3xl overflow-hidden hover:shadow-2xl transition-all w-full cursor-pointer flex flex-col" onclick="openProjectModal('armadorpc')">
+<div class="h-64 overflow-hidden">
+<img alt="Armador de PC - Configurador" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" src="assets/Apps/ArmadorPCBuilder.png"/>
+</div>
+<div class="p-8 flex-1 flex flex-col">
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="text-xs font-bold uppercase tracking-widest text-primary">React</span>
+<span class="text-xs font-bold uppercase tracking-widest text-secondary">TypeScript</span>
+<span class="text-xs font-bold uppercase tracking-widest text-primary">Vite</span>
+</div>
+<h3 class="text-2xl font-bold mb-3" data-es="Armador de PC" data-en="PC Builder &amp; Optimizer">Armador de PC</h3>
+<p class="text-slate-500 dark:text-slate-400 mb-6 text-sm" data-es="Configurador interactivo de PCs con más de 1.200 componentes, motor de compatibilidad en tiempo real, optimizador por presupuesto con beam search y builds compartibles por URL." data-en="Interactive PC configurator with 1,200+ components, real-time compatibility engine, beam-search budget optimizer, and stateless shareable URL builds.">Configurador interactivo de PCs con más de 1.200 componentes, motor de compatibilidad en tiempo real, optimizador por presupuesto con beam search y builds compartibles por URL.</p>
+<a class="inline-flex items-center text-primary font-bold group-hover:gap-2 transition-all mt-auto" href="javascript:void(0)" onclick="event.stopPropagation(); openProjectModal('armadorpc'); return false;">
 <span data-es="Ver Proyecto" data-en="View Project">Ver Proyecto</span> <span class="material-icons text-sm ml-1">arrow_forward</span>
 </a>
 </div>
@@ -153,14 +207,14 @@
 </div>
 </section>
 
-<!-- Modal para el proyecto de contabilidad -->
+<!-- Modal dinámico de proyectos -->
 <div id="projectModal" class="fixed inset-0 bg-black/50 z-50 hidden flex items-center justify-center p-4" onclick="closeProjectModal(event)">
-<div class="bg-white dark:bg-slate-900 rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto glass" onclick="event.stopPropagation()">
+<div id="projectModalContent" class="bg-white dark:bg-slate-900 rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto glass" onclick="event.stopPropagation()">
 <!-- Header del Modal -->
-<div class="sticky top-0 backdrop-blur-lg border-b border-slate-200 dark:border-slate-800 p-8 flex justify-between items-center">
+<div class="sticky top-0 z-10 bg-white/80 dark:bg-slate-900/80 backdrop-blur-lg border-b border-slate-200 dark:border-slate-800 p-8 flex justify-between items-center">
 <div>
-<h2 class="text-3xl font-display font-bold mb-2" data-es="App Contabilidad" data-en="Accounting App">App Contabilidad</h2>
-<div class="flex gap-2">
+<h2 id="modalProjectTitle" class="text-3xl font-display font-bold mb-2">App Contabilidad</h2>
+<div id="modalProjectBadges" class="flex flex-wrap gap-2">
 <span class="text-xs font-bold uppercase tracking-widest text-primary">Next.js</span>
 <span class="text-xs font-bold uppercase tracking-widest text-secondary">Supabase</span>
 </div>
@@ -175,93 +229,32 @@
 <!-- Descripción -->
 <div>
 <h3 class="text-2xl font-bold mb-4" data-es="Descripción del Proyecto" data-en="Project Description">Descripción del Proyecto</h3>
-<p class="text-slate-600 dark:text-slate-400 leading-relaxed" data-es="App Contabilidad es una solución integral diseñada para facilitar la gestión contable de pequeños negocios. La aplicación proporciona una interfaz moderna e intuitiva que permite a los empresarios administrar sus operaciones financieras de manera eficiente." data-en="App Contabilidad is a comprehensive solution designed to facilitate accounting management for small businesses. The application provides a modern and intuitive interface that allows entrepreneurs to manage their financial operations efficiently.">App Contabilidad es una solución integral diseñada para facilitar la gestión contable de pequeños negocios. La aplicación proporciona una interfaz moderna e intuitiva que permite a los empresarios administrar sus operaciones financieras de manera eficiente.</p>
+<p id="modalProjectDescription" class="text-slate-600 dark:text-slate-400 leading-relaxed">App Contabilidad es una solución integral diseñada para facilitar la gestión contable de pequeños negocios. La aplicación proporciona una interfaz moderna e intuitiva que permite a los empresarios administrar sus operaciones financieras de manera eficiente.</p>
 </div>
 
 <!-- Problema que soluciona -->
 <div>
 <h3 class="text-2xl font-bold mb-4" data-es="Problema que Soluciona" data-en="Problem It Solves">Problema que Soluciona</h3>
-<ul class="space-y-3 text-slate-600 dark:text-slate-400">
-<li class="flex items-start gap-3">
-<span class="material-icons text-primary flex-shrink-0 mt-1">check_circle</span>
-<span data-es="Elimina la necesidad de sistemas complejos y costosos de contabilidad para pequeños negocios" data-en="Eliminates the need for complex and expensive accounting systems for small businesses">Elimina la necesidad de sistemas complejos y costosos de contabilidad para pequeños negocios</span>
-</li>
-<li class="flex items-start gap-3">
-<span class="material-icons text-primary flex-shrink-0 mt-1">check_circle</span>
-<span data-es="Proporciona un dashboard centralizado para monitorear todas las operaciones en tiempo real" data-en="Provides a centralized dashboard to monitor all operations in real-time">Proporciona un dashboard centralizado para monitorear todas las operaciones en tiempo real</span>
-</li>
-<li class="flex items-start gap-3">
-<span class="material-icons text-primary flex-shrink-0 mt-1">check_circle</span>
-<span data-es="Facilita la gestión de inventario y registro de ventas de forma rápida y práctica" data-en="Facilitates inventory management and sales record keeping quickly and conveniently">Facilita la gestión de inventario y registro de ventas de forma rápida y práctica</span>
-</li>
-<li class="flex items-start gap-3">
-<span class="material-icons text-primary flex-shrink-0 mt-1">check_circle</span>
-<span data-es="Ahorra tiempo que antes se invertía en procesos manuales y propensos a errores" data-en="Saves time previously spent on manual and error-prone processes">Ahorra tiempo que antes se invertía en procesos manuales y propensos a errores</span>
-</li>
+<ul id="modalProjectProblems" class="space-y-3 text-slate-600 dark:text-slate-400">
 </ul>
 </div>
 
 <!-- Galería de imágenes -->
 <div>
 <h3 class="text-2xl font-bold mb-6" data-es="Galería del Proyecto" data-en="Project Gallery">Galería del Proyecto</h3>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-<div class="group relative rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 hover:shadow-xl transition-all">
-<img src="assets/Apps/AppContabilidad%20dashboard.png" alt="Dashboard" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300 cursor-pointer" onclick="toggleFullscreenImage(this)"/>
-<div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all flex items-center justify-center opacity-0 group-hover:opacity-100">
-<span class="material-icons text-white text-3xl">zoom_in</span>
-</div>
-</div>
-<div class="group relative rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 hover:shadow-xl transition-all">
-<img src="assets/Apps/AppContabilidadProducts.png" alt="Gestión de Productos" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300 cursor-pointer" onclick="toggleFullscreenImage(this)"/>
-<div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all flex items-center justify-center opacity-0 group-hover:opacity-100">
-<span class="material-icons text-white text-3xl">zoom_in</span>
-</div>
-</div>
-<div class="group relative rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 hover:shadow-xl transition-all">
-<img src="assets/Apps/AppContabilidadVenta.png" alt="Registro de Ventas" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300 cursor-pointer" onclick="toggleFullscreenImage(this)"/>
-<div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all flex items-center justify-center opacity-0 group-hover:opacity-100">
-<span class="material-icons text-white text-3xl">zoom_in</span>
-</div>
-</div>
+<div id="modalProjectGallery" class="grid grid-cols-1 md:grid-cols-3 gap-6">
 </div>
 </div>
 
 <!-- Características técnicas -->
 <div>
 <h3 class="text-2xl font-bold mb-4" data-es="Características Técnicas" data-en="Technical Features">Características Técnicas</h3>
-<div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-<div class="p-4 bg-slate-50 dark:bg-slate-800 rounded-xl">
-<span class="text-xs text-primary font-bold uppercase tracking-widest" data-es="Framework" data-en="Framework">Framework</span>
-<p class="font-bold mt-2">Next.js 14</p>
-</div>
-<div class="p-4 bg-slate-50 dark:bg-slate-800 rounded-xl">
-<span class="text-xs text-secondary font-bold uppercase tracking-widest" data-es="Base de Datos" data-en="Database">Base de Datos</span>
-<p class="font-bold mt-2">Supabase</p>
-</div>
-<div class="p-4 bg-slate-50 dark:bg-slate-800 rounded-xl">
-<span class="text-xs text-primary font-bold uppercase tracking-widest" data-es="Estilos" data-en="Styling">Estilos</span>
-<p class="font-bold mt-2">Tailwind CSS</p>
-</div>
-<div class="p-4 bg-slate-50 dark:bg-slate-800 rounded-xl">
-<span class="text-xs text-secondary font-bold uppercase tracking-widest" data-es="Autenticación" data-en="Authentication">Autenticación</span>
-<p class="font-bold mt-2">Supabase Auth</p>
-</div>
-<div class="p-4 bg-slate-50 dark:bg-slate-800 rounded-xl">
-<span class="text-xs text-primary font-bold uppercase tracking-widest" data-es="Hosting" data-en="Hosting">Hosting</span>
-<p class="font-bold mt-2">Vercel</p>
-</div>
-<div class="p-4 bg-slate-50 dark:bg-slate-800 rounded-xl">
-<span class="text-xs text-secondary font-bold uppercase tracking-widest" data-es="Estado" data-en="Status">Estado</span>
-<p class="font-bold mt-2" data-es="En Producción" data-en="In Production">Desplegada</p>
-</div>
+<div id="modalProjectTech" class="grid grid-cols-2 md:grid-cols-3 gap-4">
 </div>
 </div>
 
 <!-- Call to Action -->
-<div class="flex flex-col sm:flex-row gap-4 pt-6 border-t border-slate-200 dark:border-slate-800">
-<a href="https://app-contabilidad-de-nogecio.vercel.app/login" target="_blank" rel="noopener noreferrer" class="flex-1 px-8 py-4 bg-primary hover:bg-cyan-500 text-white font-bold rounded-xl transition-all transform hover:-translate-y-1 glow-hover flex items-center justify-center gap-2">
-<span data-es="Ver Aplicación en Vivo" data-en="View Live Application">Ver Aplicación en Vivo</span> <span class="material-icons text-sm">open_in_new</span>
-</a>
+<div id="modalProjectActions" class="flex flex-col sm:flex-row gap-4 pt-6 border-t border-slate-200 dark:border-slate-800">
 </div>
 </div>
 </div>
